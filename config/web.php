@@ -11,6 +11,7 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\AdminModule',
+            'layout' => 'main',
         ],
         'api' => [
             'class' => 'app\modules\api\ApiModule',
@@ -23,16 +24,7 @@ $config = [
           'showScriptName' => false,
           // Disable r= routes
           'enablePrettyUrl' => true,
-          'rules' => [
-                  ['class' => 'yii\rest\UrlRule', 'controller' => 'modules/api'],
-                  '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                  '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                  '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-                  '<module:\w+>/<controller:\w+>/<view:\w+>/<id:\d+>' => '<module>/<controller>/view',
-                  '<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
-                  '<controller:\w+>/<action:\w+>/<slug:\w+>' => '<controller>/<action>',
-                  '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-          ],
+          'rules' =>  require(__DIR__ . '/rules.php'),
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -49,7 +41,7 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'pages/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

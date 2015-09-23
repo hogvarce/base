@@ -40,10 +40,10 @@ AppAsset::register($this);
                 ['label' => 'Home', 'url' => ['/']],
                 ['label' => 'First', 'url' => ['pages/page/first']],
                 Yii::$app->user->isGuest ?
-                    ['label' => 'Login', 'url' => ['/site/login']] :
+                    ['label' => 'Login', 'url' => ['/admin']] :
                     [
                         'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                        'url' => ['/site/logout'],
+                        'url' => ['pages/logout'],
                         'linkOptions' => ['data-method' => 'post']
                     ],
             ],
