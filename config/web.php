@@ -12,6 +12,13 @@ $config = [
         'admin' => [
             'class' => 'app\modules\admin\AdminModule',
             'layout' => 'main',
+            'as access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'rules' => [
+                    [ 'actions' => ['login', 'logout'], 'allow' => true ],
+                    [ 'allow' => true, 'roles' => ['@'] ]
+                ],
+            ],
         ],
         'api' => [
             'class' => 'app\modules\api\ApiModule',
@@ -38,7 +45,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => false,
         ],
         'errorHandler' => [
             'errorAction' => 'pages/error',
