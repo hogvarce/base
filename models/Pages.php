@@ -54,7 +54,7 @@ class Pages extends \yii\db\ActiveRecord
         $items = [];
         $models = parent::find()->all();
         foreach($models as $model) {
-            $items[] = ['label' => $model->title, 'url' => ($model->slug == '/') ? $model->slug : 'pages/page/'.$model->slug];
+            $items[] = ['label' => $model->title, 'url' => ($model->slug == '/') ? $model->slug : '/pages/index/'.$model->slug];
         }
         return $items;
     }

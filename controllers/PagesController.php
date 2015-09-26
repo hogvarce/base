@@ -51,10 +51,10 @@ class PagesController extends Controller
     }
 
 
-    public function actionIndex()
+    public function actionIndex($slug = '/')
     {
       $model = Pages::findOne([
-        'slug' => '/',
+        'slug' => $slug,
     ]);
       if ($model === null) {
           throw new NotFoundHttpException;
