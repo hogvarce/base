@@ -1,0 +1,74 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'e:\\nodejs\\node.exe',
+1 verbose cli   'e:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'gulp-uglify-js' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'gulp-uglify-js', null ]
+6 verbose cache add name=undefined spec="gulp-uglify-js" args=["gulp-uglify-js",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'gulp-uglify-js',
+7 verbose parsed url   path: 'gulp-uglify-js',
+7 verbose parsed url   href: 'gulp-uglify-js' }
+8 silly lockFile 5809696a-gulp-uglify-js gulp-uglify-js
+9 verbose lock gulp-uglify-js C:\Users\Anton\AppData\Roaming\npm-cache\5809696a-gulp-uglify-js.lock
+10 silly lockFile 5809696a-gulp-uglify-js gulp-uglify-js
+11 silly lockFile 5809696a-gulp-uglify-js gulp-uglify-js
+12 verbose addNamed [ 'gulp-uglify-js', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 49e8c563-gulp-uglify-js gulp-uglify-js@
+15 verbose lock gulp-uglify-js@ C:\Users\Anton\AppData\Roaming\npm-cache\49e8c563-gulp-uglify-js.lock
+16 silly addNameRange { name: 'gulp-uglify-js', range: '*', hasData: false }
+17 verbose request where is /gulp-uglify-js
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id c65e87e39014d50e
+20 verbose url raw /gulp-uglify-js
+21 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-uglify-js' ]
+22 verbose url resolved https://registry.npmjs.org/gulp-uglify-js
+23 verbose request where is https://registry.npmjs.org/gulp-uglify-js
+24 info trying registry request attempt 1 at 23:27:30
+25 http GET https://registry.npmjs.org/gulp-uglify-js
+26 http 404 https://registry.npmjs.org/gulp-uglify-js
+27 silly registry.get cb [ 404,
+27 silly registry.get   { 'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '2',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Sat, 26 Sep 2015 20:27:31 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-fra1230-FRA',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1443299251.248636,VS0,VE408' } ]
+28 silly lockFile 49e8c563-gulp-uglify-js gulp-uglify-js@
+29 silly lockFile 49e8c563-gulp-uglify-js gulp-uglify-js@
+30 error 404 Not Found
+30 error 404
+30 error 404 'gulp-uglify-js' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404 It was specified as a dependency of 'news_site'
+30 error 404
+30 error 404 Maybe try 'npm search gulp uglify'
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Windows_NT 6.2.9200
+32 error command "e:\\nodejs\\node.exe" "e:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save-dev" "gulp-uglify-js"
+33 error cwd e:\OpenServer\domains\base
+34 error node -v v0.10.35
+35 error npm -v 1.4.28
+36 error code E404
+37 verbose exit [ 1, true ]

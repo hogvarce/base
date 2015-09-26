@@ -30,7 +30,7 @@ AppAsset::register($this);
         'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-inverse navbar-top',
         ],
     ]);
     echo Nav::widget([
@@ -48,11 +48,24 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= $content ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2">
+                <?= Nav::widget([
+                    'options' => ['class' => 'navbar-nav navbar-vertical'],
+                    'items' => [
+                        ['label' => 'Страницы', 'url' => ['/admin/pages/index']]
+                    ],
+                    ]);
+                ?>
+            </div>
+            <div class="col-xs-10">
+                <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]) ?>
+                <?= $content ?>
+            </div>
+        </div>
     </div>
 </div>
 
