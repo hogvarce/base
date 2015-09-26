@@ -70,4 +70,9 @@ class DefaultController extends Controller
 
         return $this->goHome();
     }
+
+    public function actionPages()
+    {
+      return $this->render('/pages/index');
+    }
 }

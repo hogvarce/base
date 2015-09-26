@@ -12,11 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'keyword_page')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'title')->input([]) ?>
 
-    <?= $form->field($model, 'desc_page')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'slug')->input([]) ?>
 
-    <?= $form->field($model, 'content_page')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'keyword_page')->input([]) ?>
+
+    <?= $form->field($model, 'desc_page')->input([]) ?>
+
+    <?= $form->field($model, 'content_page')->textarea(['rows' => 10]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

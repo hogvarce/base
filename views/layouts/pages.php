@@ -27,6 +27,16 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
+        $menuItems = Pages::getItems();
+          if (!Yii::$app->user->isGuest)
+            $menuItems[] = [
+                'label' => 'AdminPanel',
+                'url' => ['admin/default/index'],
+            ];
+          else
+            $menuItems[] = [
+              'label' => 'Login', 'url' => ['/admin']
+            ];
         NavBar::begin([
             'brandLabel' => 'My Company',
             'brandUrl' => Yii::$app->homeUrl,
@@ -36,17 +46,7 @@ AppAsset::register($this);
         ]);
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
-            'items' => [
-                ['label' => 'Home', 'url' => ['/']],
-                ['label' => 'First', 'url' => ['pages/page/first']],
-                Yii::$app->user->isGuest ?
-                    ['label' => 'Login', 'url' => ['/admin']] :
-                    [
-                        'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                        'url' => ['pages/logout'],
-                        'linkOptions' => ['data-method' => 'post']
-                    ],
-            ],
+            'items'   =>   $menuItems,
         ]);
         NavBar::end();
         ?>

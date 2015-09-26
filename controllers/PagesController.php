@@ -53,7 +53,17 @@ class PagesController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+      $model = Pages::findOne([
+        'slug' => '/',
+    ]);
+      if ($model === null) {
+          throw new NotFoundHttpException;
+      }
+
+      // renders a view named "view" and applies a layout to it
+      return $this->render('view', [
+          'model' => $model,
+      ]);
     }
 
     public function actionLogin()

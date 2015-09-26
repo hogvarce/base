@@ -19,7 +19,7 @@ class PagesSearch extends Pages
     {
         return [
             [['id_page'], 'integer'],
-            [['keyword_page', 'desc_page', 'content_page'], 'safe'],
+            [['title', 'keyword_page', 'desc_page', 'content_page', 'slug'], 'safe'],
         ];
     }
 
@@ -59,9 +59,11 @@ class PagesSearch extends Pages
             'id_page' => $this->id_page,
         ]);
 
-        $query->andFilterWhere(['like', 'keyword_page', $this->keyword_page])
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'keyword_page', $this->keyword_page])
             ->andFilterWhere(['like', 'desc_page', $this->desc_page])
-            ->andFilterWhere(['like', 'content_page', $this->content_page]);
+            ->andFilterWhere(['like', 'content_page', $this->content_page])
+            ->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;
     }

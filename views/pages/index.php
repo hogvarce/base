@@ -1,11 +1,16 @@
 <?php
-/* @var $this yii\web\View */
-  use yii\helpers\Url;
-  use yii\helpers\Html;
-?>
-<h1>pages/index</h1>
 
-<p>
-    <?=Html::a('slug', Url::toRoute(['page', 'slug' => 'first']))?>
-  
-</p>
+use yii\helpers\Html;
+use yii\widgets\DetailView;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\Pages */
+
+?>
+<div class="pages-view">
+
+    <h1><?= Html::encode($model->title) ?></h1>
+    <p><?= $model->content_page ?></p>
+
+
+</div>
