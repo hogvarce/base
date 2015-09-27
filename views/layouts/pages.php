@@ -66,6 +66,10 @@ AppAsset::register($this);
         </div>
     </footer>
 
+    <script type="text/template" id="Good">
+        <p><%= title %></p>
+    </script>
+
 <?php $this->endBody() ?>
 </body>
 </html>

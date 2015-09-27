@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Pages */
     if(Yii::$app->request->url != Yii::$app->homeUrl){
-        $this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
+    //    $this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
         $this->params['breadcrumbs'][] = $this->title;
     }
 ?>
