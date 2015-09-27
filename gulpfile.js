@@ -5,7 +5,11 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify');
 
 var jsSource = [
-  'web/js/*.js'
+  'web/js/*.js',
+  'web/js/collections/*.js',
+  'web/js/models/*.js',
+  'web/js/routes/*.js',
+  'web/js/views/*.js',
 ];
 
 var sassSource = [
