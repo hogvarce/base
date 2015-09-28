@@ -19,7 +19,7 @@ class PagesSearch extends Pages
     {
         return [
             [['id_page'], 'integer'],
-            [['title', 'keyword_page', 'desc_page', 'content_page', 'slug'], 'safe'],
+            [['title', 'keyword_page', 'desc_page', 'content_page', 'slug', 'goods_on_page'], 'safe'],
         ];
     }
 

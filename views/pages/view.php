@@ -15,5 +15,8 @@ use yii\widgets\DetailView;
     <h1><?= Html::encode($model->title) ?></h1>
     <p><?= $model->content_page ?></p>
 
+    <?php if ( $model->goods_on_page ): ?>
+        <div class="goods"></div>
+    <?php endif ?>    
 
 </div>

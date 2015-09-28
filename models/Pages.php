@@ -31,7 +31,8 @@ class Pages extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'slug'], 'required'],
-            [['title', 'keyword_page', 'desc_page', 'content_page', 'slug'], 'string']
+            [['title', 'keyword_page', 'desc_page', 'content_page', 'slug'], 'string'],
+            [['goods_on_page'], 'boolean'],
         ];
     }
 
@@ -41,12 +42,13 @@ class Pages extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_page' => 'Id Page',
-            'title' => 'Title',
-            'keyword_page' => 'Keyword Page',
-            'desc_page' => 'Desc Page',
-            'content_page' => 'Content Page',
-            'slug' => 'Slug',
+            'id_page' => 'Id Страницы',
+            'title' => 'Заголовок',
+            'keyword_page' => 'Ключевые слова',
+            'desc_page' => 'Описание',
+            'content_page' => 'Основное содержимое',
+            'slug' => 'Ссылка',
+            'goods_on_page' => 'Наличие товаров на странице',
         ];
     }
     public static function getItems()
