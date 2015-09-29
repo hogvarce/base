@@ -31,7 +31,7 @@ gulp.task('js', function(){
     .pipe(sourcemaps.init())
         .pipe(concat('global.js'))
             .pipe(sourcemaps.write())
-            //    .pipe(uglify())
+                .pipe(uglify())
                     .pipe(gulp.dest('web/js/product'))
 });
 

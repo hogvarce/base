@@ -8,6 +8,7 @@ use app\models\PagesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use vova07\imperavi\actions\GetAction;
 
 /**
  * PagesController implements the CRUD actions for Pages model.
@@ -30,6 +31,24 @@ class PagesController extends Controller
      * Lists all Pages models.
      * @return mixed
      */
+
+     public function actions()
+     {
+         return [
+             'image-upload' => [
+                 'class' => 'vova07\imperavi\actions\UploadAction',
+                 'url' => '/upload', // Directory URL address, where files are stored.
+                 'path' => Yii::getAlias('@webroot/upload'), // Or absolute path to directory where files are stored.webroot
+             ],
+             'images-get' => [
+                   'class' => 'vova07\imperavi\actions\GetAction',
+                   'url' => '/upload', // Directory URL address, where files are stored.
+                   'path' => Yii::getAlias('@webroot/upload'), // Or absolute path to directory where files are stored.
+                   'type' => GetAction::TYPE_IMAGES,
+               ]
+         ];
+     }
+
     public function actionIndex()
     {
         $searchModel = new PagesSearch();

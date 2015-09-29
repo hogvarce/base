@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use vova07\imperavi\Widget;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Pages */
@@ -20,8 +22,20 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'desc_page')->input([]) ?>
 
-    <?= $form->field($model, 'content_page')->textarea(['rows' => 10]) ?>
-
+    <?= $form->field($model, 'content_page')->widget(Widget::className(), [
+            'settings' => [
+                'lang' => 'ru',
+                'minHeight' => 200,
+                'plugins' => [
+                    'clips',
+                    'fullscreen',
+                    'imagemanager'
+                ],
+                'imageManagerJson' => Url::to(['/admin/pages/images-get']),
+                'imageUpload' => Url::to(['/admin/pages/image-upload']),
+            ]
+        ]);
+       ?>
     <?= $form->field($model, 'goods_on_page')->checkbox([]) ?>
 
     <div class="form-group">
