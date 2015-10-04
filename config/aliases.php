@@ -1,6 +1,2 @@
 <?php
-  return [
-    'aliases' => [
-      '@mdm/admin' => '@app/extensions/mdm/yii2-admin-2.0.0',
-   ]
-  ];
+    Yii::setAlias('api', dirname(dirname(__DIR__)) . '/api');

@@ -15,7 +15,8 @@ var jsSource = [
 ];
 
 var sassSource = [
-  'web/sass/*.sass'
+  'web/sass/*.sass',
+  'web/sass/*.scss'
 ];
 
 gulp.task('sass', function(){

@@ -1,1 +1,27 @@
+*
+    box-sizing: border-box
 
+$colorBlack: #000
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+=box-shadow($data)
+    -webkit-box-shadow: $data
+    -moz-box-shadow:    $data
+    -ms-box-shadow:     $data
+    box-shadow:         $data
+
+.good
+  margin-bottom: 20px
+  .insideBlock
+    width: 250px
+    height: 300px
+    overflow: hidden
+    margin: 0 auto
+    padding: 20px
+    +border-radius(10px)
+    +box-shadow(3px 3px 15px $colorBlack)

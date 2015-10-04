@@ -67,7 +67,9 @@ AppAsset::register($this);
     </footer>
 
     <script type="text/template" id="Good">
-        <p><%= title %></p>
+        <div class="insideBlock">
+            <p><%= pagetitle %></p>
+        </div>
     </script>
 
 <?php $this->endBody() ?>
