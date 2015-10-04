@@ -2,6 +2,8 @@
     box-sizing: border-box
 
 $colorBlack: #000
+$colorBack: #ccc
+$colorMain: #fff
 
 =border-radius($radius)
   -webkit-border-radius: $radius
@@ -25,3 +27,15 @@ $colorBlack: #000
     padding: 20px
     +border-radius(10px)
     +box-shadow(3px 3px 15px $colorBlack)
+
+.pagination
+    width: 100%
+    overflow: hidden
+    a
+        display: block
+        float: left
+        margin-left: 5px
+        span
+            display: block
+            +border-radius(2px)
+            padding: 5px

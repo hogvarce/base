@@ -33,6 +33,7 @@ class Pages extends \yii\db\ActiveRecord
             [['title', 'slug'], 'required'],
             [['title', 'keyword_page', 'desc_page', 'content_page', 'slug'], 'string'],
             [['goods_on_page'], 'boolean'],
+            [['order_page'], 'integer'],
         ];
     }
 
@@ -49,12 +50,13 @@ class Pages extends \yii\db\ActiveRecord
             'content_page' => 'Основное содержимое',
             'slug' => 'Ссылка',
             'goods_on_page' => 'Наличие товаров на странице',
+            'order_page' => 'Порядок вывода в меню',
         ];
     }
     public static function getItems()
     {
         $items = [];
-        $models = parent::find()->all();
+        $models = parent::find()->orderBy("order_page")->all();
         foreach($models as $model) {
             $items[] = ['label' => $model->title, 'url' => ($model->slug == '/') ? $model->slug : '/pages/index/'.$model->slug];
         }
