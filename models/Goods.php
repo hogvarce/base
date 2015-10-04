@@ -8,7 +8,6 @@ use Yii;
  * This is the model class for table "goods".
  *
  * @property string $id
- * @property string $contentType
  * @property string $pagetitle
  * @property string $longtitle
  * @property string $description
@@ -17,11 +16,8 @@ use Yii;
  * @property integer $pub_date
  * @property integer $unpub_date
  * @property integer $parent
- * @property integer $isfolder
  * @property string $introtext
  * @property string $content
- * @property integer $template
- * @property integer $menuindex
  * @property integer $searchable
  * @property integer $cacheable
  * @property integer $createdby
@@ -64,9 +60,8 @@ class Goods extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['published', 'pub_date', 'unpub_date', 'parent', 'isfolder', 'template', 'menuindex', 'searchable', 'cacheable', 'createdby', 'createdon', 'editedby', 'editedon', 'deleted', 'deletedon', 'deletedby', 'publishedon', 'publishedby', 'donthit', 'privateweb', 'privatemgr', 'content_dispo', 'hidemenu', 'content_type', 'uri_override', 'hide_children_in_tree', 'show_in_tree'], 'integer'],
+            [['published', 'pub_date', 'unpub_date', 'parent', 'searchable', 'cacheable', 'createdby', 'createdon', 'editedby', 'editedon', 'deleted', 'deletedon', 'deletedby', 'publishedon', 'publishedby', 'donthit', 'privateweb', 'privatemgr', 'content_dispo', 'hidemenu', 'content_type', 'uri_override', 'hide_children_in_tree', 'show_in_tree'], 'integer'],
             [['introtext', 'content', 'uri', 'properties'], 'string'],
-            [['contentType'], 'string', 'max' => 50],
             [['pagetitle', 'longtitle', 'description', 'alias', 'menutitle'], 'string', 'max' => 255],
             [['class_key', 'context_key'], 'string', 'max' => 100]
         ];
@@ -79,7 +74,6 @@ class Goods extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'contentType' => 'Content Type',
             'pagetitle' => 'Pagetitle',
             'longtitle' => 'Longtitle',
             'description' => 'Description',
@@ -88,11 +82,8 @@ class Goods extends \yii\db\ActiveRecord
             'pub_date' => 'Pub Date',
             'unpub_date' => 'Unpub Date',
             'parent' => 'Parent',
-            'isfolder' => 'Isfolder',
             'introtext' => 'Introtext',
             'content' => 'Content',
-            'template' => 'Template',
-            'menuindex' => 'Menuindex',
             'searchable' => 'Searchable',
             'cacheable' => 'Cacheable',
             'createdby' => 'Createdby',

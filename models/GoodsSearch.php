@@ -18,8 +18,8 @@ class GoodsSearch extends Goods
     public function rules()
     {
         return [
-            [['id', 'published', 'pub_date', 'unpub_date', 'parent', 'isfolder', 'template', 'menuindex', 'searchable', 'cacheable', 'createdby', 'createdon', 'editedby', 'editedon', 'deleted', 'deletedon', 'deletedby', 'publishedon', 'publishedby', 'donthit', 'privateweb', 'privatemgr', 'content_dispo', 'hidemenu', 'content_type', 'uri_override', 'hide_children_in_tree', 'show_in_tree'], 'integer'],
-            [['contentType', 'pagetitle', 'longtitle', 'description', 'alias', 'introtext', 'content', 'menutitle', 'class_key', 'context_key', 'uri', 'properties'], 'safe'],
+            [['id', 'published', 'pub_date', 'unpub_date', 'parent', 'searchable', 'cacheable', 'createdby', 'createdon', 'editedby', 'editedon', 'deleted', 'deletedon', 'deletedby', 'publishedon', 'publishedby', 'donthit', 'privateweb', 'privatemgr', 'content_dispo', 'hidemenu', 'content_type', 'uri_override', 'hide_children_in_tree', 'show_in_tree'], 'integer'],
+            [['pagetitle', 'longtitle', 'description', 'alias', 'introtext', 'content', 'menutitle', 'class_key', 'context_key', 'uri', 'properties'], 'safe'],
         ];
     }
 
@@ -61,9 +61,6 @@ class GoodsSearch extends Goods
             'pub_date' => $this->pub_date,
             'unpub_date' => $this->unpub_date,
             'parent' => $this->parent,
-            'isfolder' => $this->isfolder,
-            'template' => $this->template,
-            'menuindex' => $this->menuindex,
             'searchable' => $this->searchable,
             'cacheable' => $this->cacheable,
             'createdby' => $this->createdby,
@@ -86,8 +83,7 @@ class GoodsSearch extends Goods
             'show_in_tree' => $this->show_in_tree,
         ]);
 
-        $query->andFilterWhere(['like', 'contentType', $this->contentType])
-            ->andFilterWhere(['like', 'pagetitle', $this->pagetitle])
+        $query->andFilterWhere(['like', 'pagetitle', $this->pagetitle])
             ->andFilterWhere(['like', 'longtitle', $this->longtitle])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'alias', $this->alias])

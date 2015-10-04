@@ -23,7 +23,7 @@ gulp.task('sass', function(){
   gulp.src(sassSource)
     .pipe(sass())
       .pipe(concat('styles.css'))
-        .pipe(uglify())
+       // .pipe(uglify())
             .pipe(gulp.dest('web/css'))
 });
 
