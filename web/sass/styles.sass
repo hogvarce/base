@@ -24,9 +24,23 @@ $colorMain: #fff
     height: 300px
     overflow: hidden
     margin: 0 auto
-    padding: 20px
+    padding: 20px 20px 40px
     +border-radius(10px)
     +box-shadow(3px 3px 15px $colorBlack)
+    position: relative
+    .buy
+        position: absolute
+        width: 100px
+        text-align: center
+        margin-left: -50px
+        bottom: 10px
+        left: 50%
+        + input
+            position: absolute
+            right: 10px
+            bottom: 10px
+            width: 40px
+            +border-radius(0px 0px 10px 0px)
 
 .pagination
     width: 100%

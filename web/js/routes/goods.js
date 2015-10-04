@@ -15,7 +15,6 @@ app.Router = Backbone.Router.extend({
                 paginCount = options.xhr.getResponseHeader('X-Pagination-Page-Count'),
                 currentPage = options.xhr.getResponseHeader('X-Pagination-Current-Page'),
                 pagination = '<div class="pagination">',
-                path = window.location.pathname,
                 active = '';
             for(var i = 1; i <= paginCount; i++)
             {

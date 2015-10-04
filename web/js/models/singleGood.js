@@ -4,6 +4,7 @@ app.singleGood = Backbone.Model.extend({
     defaults:{
         title: "undefined",
         price: 0,
-        img: "#"
+        img: "#",
+        count: 1
     }
 });
