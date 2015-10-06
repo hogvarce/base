@@ -19,7 +19,7 @@ app.Router = Backbone.Router.extend({
             for(var i = 1; i <= paginCount; i++)
             {
                 active = (currentPage == i) ? 'class="active"' : '';
-                pagination += '<a '+active+'href="/pages/index/goods/'+i+'"><span>'+i+'</span></a>';
+                pagination += '<a '+active+'href="/pages/goods/'+i+'"><span>'+i+'</span></a>';
             }
             pagination += '</div>';
             $(".goods").append(goodsGroupView.render().el)
