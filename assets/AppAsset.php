@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
         '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js',
         '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js',
         'js/product/wow.min.js',
+        'js/product/purl.js',
         'js/product/global.js',
     ];
     public $depends = [

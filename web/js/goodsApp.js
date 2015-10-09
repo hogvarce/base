@@ -1,3 +1,7 @@
-var goodsRoute = new app.Router();
+if ($('.goods').length) {
 
-Backbone.history.start({pushState: true});
+    var goodsRoute = new app.Router();
+
+    Backbone.history.start({pushState: true});
+
+}

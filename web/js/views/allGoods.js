@@ -18,5 +18,11 @@ app.allGoodsViews = Backbone.View.extend({
         //                             .removeClass('bounceInLeft')
         //                                 .addClass('bounceInRight');
         this.$el.append(goodView.render().el);
+    },
+    events: {
+        ".pagin click": 'pagin'
+    },
+    pagin: function(){
+        console.log('ad');
     }
 });

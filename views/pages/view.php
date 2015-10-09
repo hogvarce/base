@@ -15,8 +15,15 @@ use yii\widgets\DetailView;
     <h1><?= Html::encode($model->title) ?></h1>
     <p><?= $model->content_page ?></p>
 
-    <?php if ( $model->goods_on_page ): ?>
+    <?php if ( $model->goods_on_page ):
+        $categoryGoods = \app\models\GoodsCategory::find()->all();
+        echo '<ul class="list-unstyled">';
+        foreach ($categoryGoods as $category) {
+            echo '<li><a href="javascript:addParamUrl(\'category\', '.$category->id.');">'.$category->title_category.'</a></li>';
+        }
+        echo '</ul>';
+    ?>
         <div class="goods"></div>
-    <?php endif ?>    
+    <?php endif ?>
 
 </div>
