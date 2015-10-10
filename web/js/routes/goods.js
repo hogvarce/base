@@ -7,7 +7,13 @@ app.Router = Backbone.Router.extend({
         var pagin    = $.url().param('pagin') || 1,
             category = $.url().param('category') || 0;
         var goodsGroup = new app.GoodsCollections();
-        goodsGroup.url ="/api/goods?page="+pagin;
+        if ( category != 0 ) {
+            var filterByCategoty = "parent IN (SELECT id FROM goods_category WHERE id='" + category + "')";
+            goodsGroup.url ='/api/goods?filter="' + filterByCategoty + '"&page=' + pagin;
+            console.log(goodsGroup.url);
+        } else {
+            goodsGroup.url ="/api/goods?page=" + pagin;
+        }
         goodsGroup.fetch({success:function(collection, response, options){
             var goodsGroupView = new app.allGoodsViews({ collection: collection }),
                 paginCount = options.xhr.getResponseHeader('X-Pagination-Page-Count'),

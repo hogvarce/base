@@ -27,7 +27,8 @@ class GoodsCategory extends \yii\db\ActiveRecord
     {
         return [
             [['title_category'], 'required'],
-            [['title_category'], 'string', 'max' => 255]
+            [['title_category'], 'string', 'max' => 255],
+            [['id'], 'integer'],
         ];
     }
 

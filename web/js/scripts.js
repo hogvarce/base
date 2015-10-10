@@ -17,7 +17,7 @@ if(reExp.test(url))
 else
 { // add
     var newParam = key + "=" + val;
-    if(!url.indexOf('?')){url += '?';}
+    if(url.indexOf('?')){url += '?';}
 
     if(url.indexOf('#') > -1){
         var urlparts = url.split('#');
