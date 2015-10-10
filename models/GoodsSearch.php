@@ -18,8 +18,9 @@ class GoodsSearch extends Goods
     public function rules()
     {
         return [
-            [['id', 'published', 'pub_date', 'unpub_date', 'parent', 'searchable', 'cacheable', 'createdby', 'createdon', 'editedby', 'editedon', 'deleted', 'deletedon', 'deletedby', 'publishedon', 'publishedby', 'donthit', 'privateweb', 'privatemgr', 'content_dispo', 'hidemenu', 'content_type', 'uri_override', 'hide_children_in_tree', 'show_in_tree'], 'integer'],
-            [['pagetitle', 'longtitle', 'description', 'alias', 'introtext', 'content', 'menutitle', 'class_key', 'context_key', 'uri', 'properties'], 'safe'],
+            [['id', 'published', 'parent', 'count_in_pack'], 'integer'],
+            [['articale', 'pagetitle', 'longtitle', 'description', 'introtext', 'content', 'image', 'color'], 'safe'],
+            [['price'], 'number'],
         ];
     }
 
@@ -58,42 +59,19 @@ class GoodsSearch extends Goods
         $query->andFilterWhere([
             'id' => $this->id,
             'published' => $this->published,
-            'pub_date' => $this->pub_date,
-            'unpub_date' => $this->unpub_date,
             'parent' => $this->parent,
-            'searchable' => $this->searchable,
-            'cacheable' => $this->cacheable,
-            'createdby' => $this->createdby,
-            'createdon' => $this->createdon,
-            'editedby' => $this->editedby,
-            'editedon' => $this->editedon,
-            'deleted' => $this->deleted,
-            'deletedon' => $this->deletedon,
-            'deletedby' => $this->deletedby,
-            'publishedon' => $this->publishedon,
-            'publishedby' => $this->publishedby,
-            'donthit' => $this->donthit,
-            'privateweb' => $this->privateweb,
-            'privatemgr' => $this->privatemgr,
-            'content_dispo' => $this->content_dispo,
-            'hidemenu' => $this->hidemenu,
-            'content_type' => $this->content_type,
-            'uri_override' => $this->uri_override,
-            'hide_children_in_tree' => $this->hide_children_in_tree,
-            'show_in_tree' => $this->show_in_tree,
+            'price' => $this->price,
+            'count_in_pack' => $this->count_in_pack,
         ]);
 
-        $query->andFilterWhere(['like', 'pagetitle', $this->pagetitle])
+        $query->andFilterWhere(['like', 'articale', $this->articale])
+            ->andFilterWhere(['like', 'pagetitle', $this->pagetitle])
             ->andFilterWhere(['like', 'longtitle', $this->longtitle])
             ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'alias', $this->alias])
             ->andFilterWhere(['like', 'introtext', $this->introtext])
             ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'menutitle', $this->menutitle])
-            ->andFilterWhere(['like', 'class_key', $this->class_key])
-            ->andFilterWhere(['like', 'context_key', $this->context_key])
-            ->andFilterWhere(['like', 'uri', $this->uri])
-            ->andFilterWhere(['like', 'properties', $this->properties]);
+            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['like', 'color', $this->color]);
 
         return $dataProvider;
     }

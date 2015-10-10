@@ -2,9 +2,9 @@ var app = app || {};
 
 app.singleGood = Backbone.Model.extend({
     defaults:{
-        title: "undefined",
+        pagetitle: "undefined",
         price: 0,
-        img: "#",
+        image: "/img/no_photo.png",
         count: 1
     }
 });

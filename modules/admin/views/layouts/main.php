@@ -52,9 +52,10 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-xs-2">
                 <?= Nav::widget([
-                    'options' => ['class' => 'navbar-nav navbar-vertical'],
+                    'options' => ['class' => 'navbar navbar-vertical'],
                     'items' => [
-                        ['label' => 'Страницы', 'url' => ['/admin/pages/index']]
+                        ['label' => 'Страницы', 'url' => ['/admin/pages/index']],
+                        ['label' => 'Товары', 'url' => ['/admin/goods/index']]
                     ],
                     ]);
                 ?>
