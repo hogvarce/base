@@ -8,7 +8,7 @@ use app\models\GoodsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\web\UploadedFile;
 /**
  * GoodsController implements the CRUD actions for Goods model.
  */
@@ -81,7 +81,11 @@ class GoodsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->image = 'upload/goods-images/' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            if($model->save())
+                $model->imageFile->saveAs($model->image);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

@@ -71,7 +71,7 @@ AppAsset::register($this);
     <script type="text/template" id="Good">
         <div class="insideBlock">
             <p><%= pagetitle %></p>
-            <img src="<%=image%>" alt="<%=pagetitle%>">
+            <img src="/<%=image%>" alt="<%=pagetitle%>">
             <p class="price"><strong><%= price %></strong> руб.</p>
             <button class="buy">Купить</button><input type="number" value="<%= count %>" step="<%= count %>" min="<%= count %>" max="99" />
         </div>

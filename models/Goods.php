@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use yii\web\UploadedFile;
 /**
  * This is the model class for table "goods".
  *
@@ -28,6 +28,10 @@ use Yii;
 class Goods extends \yii\db\ActiveRecord
 {
     /**
+     * @var UploadedFile
+     */
+    public $imageFile;
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -45,7 +49,8 @@ class Goods extends \yii\db\ActiveRecord
             [['published', 'parent', 'count_in_pack'], 'integer'],
             [['introtext', 'content', 'color'], 'string'],
             [['price'], 'number'],
-            [['articale', 'pagetitle', 'longtitle', 'description', 'image'], 'string', 'max' => 255]
+            [['articale', 'pagetitle', 'longtitle', 'description', 'image'], 'string', 'max' => 255],
+            [['imageFile'], 'file', 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -70,6 +75,17 @@ class Goods extends \yii\db\ActiveRecord
             'count_in_pack' => 'Count In Pack',
         ];
     }
+
+    // public function upload()
+    // {
+    //     if ($this->validate()) {
+    //         $this->image = 'upload/goods-images/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+    //         $this->imageFile->saveAs($this->image);
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
     /**
      * @return \yii\db\ActiveQuery
