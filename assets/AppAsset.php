@@ -18,6 +18,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
         'css/site.css',
         'css/styles.css',
         'css/animate.css',
@@ -27,6 +28,7 @@ class AppAsset extends AssetBundle
         '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js',
         'js/product/wow.min.js',
         'js/product/purl.js',
+        'js/product/tm-stick-up.js',
         'js/product/global.js',
     ];
     public $depends = [

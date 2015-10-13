@@ -16,19 +16,21 @@ use yii\widgets\DetailView;
     <p><?= $model->content_page ?></p>
 
     <?php if ( $model->goods_on_page ): ?>
-    <div class="col-xs-2">
-        <?php
-            $categoryGoods = \app\models\GoodsCategory::find()->all();
-            echo '<ul class="list-unstyled">';
-            echo '<li><a href="javascript:addParamUrl(\'category\', 0);">Все товары</a></li>';
-            foreach ($categoryGoods as $category) {
-                echo '<li><a href="javascript:addParamUrl(\'category\', '.$category->id.');">'.$category->title_category.'</a></li>';
-            }
-            echo '</ul>';
-        ?>
-    </div>
-    <div class="col-xs-10">
-        <div class="goods"></div>
+    <div class="blockGoods">
+        <div class="col-xs-3">
+            <?php
+                $categoryGoods = \app\models\GoodsCategory::find()->all();
+                echo '<ul class="side-menu list-unstyled">';
+                echo '<li><a href="javascript:addParamUrl(\'category\', 0);">Все товары</a></li>';
+                foreach ($categoryGoods as $category) {
+                    echo '<li><a href="javascript:addParamUrl(\'category\', '.$category->id.');">'.$category->title_category.'</a></li>';
+                }
+                echo '</ul>';
+            ?>
+        </div>
+        <div class="col-xs-9">
+            <div class="goods"></div>
+        </div>
     </div>
     <?php endif ?>
 

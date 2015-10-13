@@ -1,6 +1,16 @@
 $(function(){
     // wow animation activation
-      new WOW().init();
+    new WOW().init();
+
+    //active button in menu
+    $('.navigation .nav a').each(function(e){
+        var href = $(this).attr('href');
+        if (location.pathname == href)
+            $(this).parent().addClass('active');
+    });
+
+    //stick navigation on top when scroll
+    $('.navigation, .side-menu').tmStickUp();
 
 }());
 

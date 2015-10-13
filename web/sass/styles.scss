@@ -1,0 +1,236 @@
+$colorBlack: #414141;
+$colorGray: #f2f2f2;
+$colorMain: #fff;
+$colorBorder: #d0cfcf;
+$colorGreen: #adc846;
+$colorOrange: #fdae1b;
+$widthGood: 230px;
+$heightGood: 330px;
+$priceFontSize: 16px;
+$priceColor: #17a6f5;
+$heightMenu: 70px;
+$shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+
+*{
+    box-sizing: border-box;
+}
+
+@mixin border-radius($radius...){
+  -webkit-border-radius: $radius;
+  -moz-border-radius:    $radius;
+  -ms-border-radius:     $radius;
+  border-radius:         $radius;
+}
+@mixin box-shadow($data...){
+    -webkit-box-shadow: $data;
+    -moz-box-shadow:    $data;
+    -ms-box-shadow:     $data;
+    box-shadow:         $data;
+}
+@mixin transition($transition...){
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+header {
+    background-color: $colorGray;
+    height: 57px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wrap {
+    overflow: hidden;
+    .content {
+        min-height: 500px;
+    }
+}
+.box-layout {
+    @include box-shadow($shadow);
+}
+.navigation {
+    width: 100%;
+    position: relative;
+    &.isStuck {
+        z-index: 1000;
+        top: 0px;
+        .container {
+            position: absolute;
+            @include box-shadow($shadow);
+        }
+    }
+    .container {
+        background-color: $colorGreen;
+        &:before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: $heightMenu;
+            background: $colorGreen url('/img/left-shadow.png') right top no-repeat;
+            margin-left: -100%;
+            z-index: -1;
+        }
+        &:after {
+            @extend &:before;
+            left: auto;
+            right: 0;
+            background:  $colorGreen url('/img/right-shadow.png') left top no-repeat;
+            margin-left: 0;
+            margin-right: -100%;
+        }
+    }
+    .navbar-nav.nav{
+        padding-left: 15px;
+        li {
+            a {
+                font-size: 24px;
+                color: #fff;
+                line-height: 40px;
+                @include transition(background-color .5s);
+                &:hover, &:focus{
+                    background-color: $colorOrange;
+                    &:after {
+                        top: -11px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                &:after {
+                    content: "\f0d7";
+                    font-size: 20px;
+                    line-height: 28px;
+                    font-family: 'FontAwesome';
+                    color: #fff;
+                    margin: 0 0 0 -10px;
+                    position: absolute;
+                    left: 50%;
+                    top: -22px;
+                    opacity: 0;
+                    width: 20px;
+                    visibility: hidden;
+                    @include transition(background-color .5s);
+                }
+            }
+            &.active {
+                a {
+                    background-color: $colorOrange;
+                    &:after {
+                        top: -11px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.good {
+       margin-bottom: 20px;
+      .insideBlock {
+        width: $widthGood;
+        height: $heightGood;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 20px 20px 40px;
+        @include box-shadow($shadow);
+        position: relative;
+        img {
+            background: url('/img/no_photo.png') no-repeat center center;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+        .description {
+            display: none;
+        }
+        .price {
+            display: block;
+            text-align: center;
+            margin: 10px auto;
+            font-size: $priceFontSize;
+            color: #ccc;
+            strong{
+                color: $priceColor;
+            }
+        }
+        .buy {
+            position: absolute;
+            width: 100px;
+            text-align: center;
+            margin-left: -50px;
+            bottom: 10px;
+            left: 50%;
+            + input {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                width: 40px;
+                @include border-radius(0px 0px 10px 0px);
+            }
+        }
+    }
+}
+
+.pagination {
+    width: 100%;
+    overflow: hidden;
+    a {
+        display: block;
+        float: left;
+        margin-left: 5px;
+        span {
+            display: block;
+            @include border-radius(2px);
+            padding: 5px;
+        }
+    }
+}
+
+.side-menu {
+    list-style-type: none;
+    margin-left: -15px;
+    border: 1px solid $colorBorder;
+    &.isStuck {
+        top: 100px !important;
+    }
+    li {
+        border-top: 1px solid $colorBorder;
+        a {
+            color: $colorBlack;
+            padding: 15px 20px;
+            display: block;
+            font-size: 18px;
+            text-decoration: none;
+            &:before {
+                content: "\f111";
+                font-size: 8px;
+                line-height: 24px;
+                font-family: 'FontAwesome';
+                color: $colorGreen;
+                margin-right: 10px;
+                position: relative;
+                top: -2px;
+                @include transition(all 0.3s ease-in);
+
+            }
+            &:hover, &:focus {
+                color: $colorGreen;
+                &:before {
+                    color: $colorBlack;
+                }
+            }
+        }
+    }
+}
+
+.blockGoods {
+    width: 100%;
+    clear: both;
+    margin-top: 50px;
+}
