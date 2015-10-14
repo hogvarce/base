@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
 use yii\helpers\Url;
+use vova07\imperavi\Widget;
 /* @var $this yii\web\View */
 /* @var $model app\models\Goods */
 /* @var $form yii\widgets\ActiveForm */
@@ -29,7 +30,19 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'introtext')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->widget(Widget::className(), [
+            'settings' => [
+                'lang' => 'ru',
+                'minHeight' => 200,
+                'plugins' => [
+                    'clips',
+                    'fullscreen',
+                    'imagemanager'
+                ],
+                'imageManagerJson' => Url::to(['/admin/pages/images-get']),
+                'imageUpload' => Url::to(['/admin/pages/image-upload']),
+            ]
+        ]); ?>
 
     <?= $form->field($model, 'price')->textInput() ?>
 

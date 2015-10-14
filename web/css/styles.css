@@ -1,6 +1,70 @@
 * {
   box-sizing: border-box; }
 
+.good {
+  margin-bottom: 20px; }
+  .good .insideBlock {
+    width: 230px;
+    height: 330px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px 20px 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 15px #000;
+    -moz-box-shadow: 3px 3px 15px #000;
+    -ms-box-shadow: 3px 3px 15px #000;
+    box-shadow: 3px 3px 15px #000;
+    position: relative; }
+    .good .insideBlock img {
+      background: url("/img/no_photo.png") no-repeat center center;
+      width: 200px;
+      height: 200px; }
+    .good .insideBlock .price {
+      display: block;
+      text-align: center;
+      margin: 10px auto;
+      font-size: 16px;
+      color: #ccc; }
+      .good .insideBlock .price strong {
+        color: #337ab7; }
+    .good .insideBlock .buy {
+      position: absolute;
+      width: 100px;
+      text-align: center;
+      margin-left: -50px;
+      bottom: 10px;
+      left: 50%; }
+      .good .insideBlock .buy + input {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        width: 40px;
+        -webkit-border-radius: 0px 0px 10px 0px;
+        -moz-border-radius: 0px 0px 10px 0px;
+        -ms-border-radius: 0px 0px 10px 0px;
+        border-radius: 0px 0px 10px 0px; }
+
+.pagination {
+  width: 100%;
+  overflow: hidden; }
+  .pagination a {
+    display: block;
+    float: left;
+    margin-left: 5px; }
+    .pagination a span {
+      display: block;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      border-radius: 2px;
+      padding: 5px; }
+
+* {
+  box-sizing: border-box; }
+
 header {
   background-color: #f2f2f2;
   height: 57px;
@@ -101,14 +165,21 @@ header {
     -ms-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     position: relative; }
-    .good .insideBlock img {
+    .good .insideBlock img.good-preview {
       background: url("/img/no_photo.png") no-repeat center center;
       width: 200px;
       height: 200px;
       margin: 0 auto;
-      display: block; }
+      display: block;
+      cursor: pointer; }
     .good .insideBlock .description {
       display: none; }
+    .good .insideBlock .good-name {
+      width: 100%;
+      height: 20px;
+      overflow: hidden;
+      position: relative;
+      display: block; }
     .good .insideBlock .price {
       display: block;
       text-align: center;

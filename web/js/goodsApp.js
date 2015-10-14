@@ -4,4 +4,5 @@ if ($('.goods').length) {
 
     Backbone.history.start({pushState: true});
 
+
 }

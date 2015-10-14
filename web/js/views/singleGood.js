@@ -12,6 +12,13 @@ app.singleGoodView = Backbone.View.extend({
     events:{
         'change .buy + input': function(e){
             this.model.set('count',$(e.target).val());
-        }
+        },
+        'click img.good-preview': 'openFrame'
+    },
+    openFrame: function(){
+        var frameContent = this.$('.description').html();
+        $.fancybox({
+            content: frameContent
+        });
     }
 });

@@ -139,15 +139,23 @@ header {
         padding: 20px 20px 40px;
         @include box-shadow($shadow);
         position: relative;
-        img {
+        img.good-preview {
             background: url('/img/no_photo.png') no-repeat center center;
             width: 200px;
             height: 200px;
             margin: 0 auto;
             display: block;
+            cursor: pointer;
         }
         .description {
             display: none;
+        }
+        .good-name {
+            width: 100%;
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+            display: block;
         }
         .price {
             display: block;

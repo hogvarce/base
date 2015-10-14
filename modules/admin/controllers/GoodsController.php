@@ -62,7 +62,12 @@ class GoodsController extends Controller
     {
         $model = new Goods();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+                if( $model->imageFile )
+            $model->image = 'upload/goods-images/' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            if($model->save() && $model->imageFile)
+                $model->imageFile->saveAs($model->image);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -83,8 +88,9 @@ class GoodsController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->image = 'upload/goods-images/' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
-            if($model->save())
+            if( $model->imageFile )
+                $model->image = 'upload/goods-images/' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+            if($model->save() && $model->imageFile)
                 $model->imageFile->saveAs($model->image);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

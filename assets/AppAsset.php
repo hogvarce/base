@@ -19,6 +19,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
+        '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css',
         'css/site.css',
         'css/styles.css',
         'css/animate.css',
@@ -26,6 +27,7 @@ class AppAsset extends AssetBundle
     public $js = [
         '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js',
         '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js',
+        '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js',
         'js/product/wow.min.js',
         'js/product/purl.js',
         'js/product/tm-stick-up.js',

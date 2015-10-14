@@ -36,38 +36,15 @@ AppAsset::register($this);
                 <div class="container">
                     <div class="row">
                         <div class="col-sx-12">
-                        <?php
-                            $menuItems = Pages::getItems();
-                            //   if (!Yii::$app->user->isGuest)
-                            //     $menuItems[] = [
-                            //         'label' => 'AdminPanel',
-                            //         'url' => ['admin/default/index'],
-                            //     ];
-                            //   else
-                            //     $menuItems[] = [
-                            //       'label' => 'Login', 'url' => ['/admin']
-                            //     ];
-                            // NavBar::begin([
-                            //     // 'brandLabel' => 'My Company',
-                            //     'brandUrl' => Yii::$app->homeUrl,
-                            //     'options' => [
-                            //         'class' => 'navbar navbar-top',
-                            //     ],
-                            // ]);
-                            echo Nav::widget([
+                        <?= Nav::widget([
                                 'options' => ['class' => 'navbar-nav navbar-left'],
-                                'items'   =>   $menuItems,
-                            ]);
-                            // NavBar::end();
-                        ?>
+                                'items'   =>  Pages::getItems(),
+                            ]);  ?>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="content">
-                <!-- <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) ?> -->
                 <?= $content ?>
             </div>
         </div>
@@ -82,8 +59,8 @@ AppAsset::register($this);
 
     <script type="text/template" id="Good">
         <div class="insideBlock" itemscope itemtype="http://schema.org/Product">
-            <p itemprop="name"><%= pagetitle %></p>
-            <img itemprop="image" src="/<%=image%>" alt="<%=pagetitle%>">
+            <p itemprop="name" class="good-name"><%= pagetitle %></p>
+            <img itemprop="image" class="good-preview" src="/<%=image%>" title='<%=pagetitle%>' alt='<%=pagetitle%>'>
             <div class="description" itemprop="description"><%= content %></div>
             <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price"><meta itemprop="priceCurrency" content="RUB" /><strong itemprop="price"><%= price %></strong> руб.</p>
             <button  class="buy">Купить</button><input type="number" value="<%= count %>" step="<%= count %>" min="<%= count %>" max="99" />
