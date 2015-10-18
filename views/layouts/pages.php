@@ -32,6 +32,22 @@ AppAsset::register($this);
             </div>
         </header>
         <div class="container box-layout">
+            <div class="top-block">
+                <div class="logo col-md-5 col-lg-5 col-sm-5">
+                    <a href="/">
+                        <img src="/img/logo.png" alt="Логотип Пластиковый Дом" />
+                    </a>
+                </div>
+                <div class="col-md-7 col-lg-7 col-sm-7">
+                        <div class="pull-right basket">
+                            <span>Корзина: </span><span class="cart_num"><a href="javascript:">0</a></span>
+                        </div>
+                        <div class="pull-right phone">
+                            <span>Телефон: </span><span class="phone-number">8(812) 985 76 78</span>
+                        </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
             <div class="row navigation">
                 <div class="container">
                     <div class="row">

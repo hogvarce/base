@@ -6,3 +6,8 @@ if ($('.goods').length) {
 
 
 }
+app.BasketModel = new app.Basket();
+var BasketCountView = new app.basketCounter({
+    model: app.BasketModel
+});
+BasketCountView.render();

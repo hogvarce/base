@@ -13,12 +13,29 @@ app.singleGoodView = Backbone.View.extend({
         'change .buy + input': function(e){
             this.model.set('count',$(e.target).val());
         },
-        'click img.good-preview': 'openFrame'
+        'click img.good-preview': 'openFrame',
+        'click .buy': 'Buy'
     },
     openFrame: function(){
         var frameContent = this.$('.description').html();
         $.fancybox({
             content: frameContent
         });
+    },
+    Buy: function(){
+        var itemBuy = {
+                goodID          : this.model.get('id'),
+                goodTitle       : this.model.get('pagetitle'),
+                goodArticle     : this.model.get('articale'),
+                goodColor       : this.model.get('color'),
+                goodCount       : this.model.get('count'),
+                goodCountInPack : this.model.get('count_in_pack')
+            };
+        var basket = Cookies.get('basket') || '[]';
+        basket = JSON.parse(basket);
+        basket.push(itemBuy);
+        app.BasketModel.set('goodsCount', basket.length);
+        basket = JSON.stringify(basket);
+        Cookies.set('basket', basket);
     }
 });

@@ -4,6 +4,7 @@ $colorMain: #fff;
 $colorBorder: #d0cfcf;
 $colorGreen: #adc846;
 $colorOrange: #fdae1b;
+$colorBlue: #17a6f5;
 $widthGood: 230px;
 $heightGood: 330px;
 $priceFontSize: 16px;
@@ -43,6 +44,9 @@ header {
 
 .wrap {
     overflow: hidden;
+    > .container.box-layout {
+        padding: 20px 15px;
+    }
     .content {
         min-height: 500px;
     }
@@ -139,6 +143,9 @@ header {
         padding: 20px 20px 40px;
         @include box-shadow($shadow);
         position: relative;
+        &:hover {
+            @include box-shadow(0 0 15px rgba(0, 0, 0, 0.3));
+        }
         img.good-preview {
             background: url('/img/no_photo.png') no-repeat center center;
             width: 200px;
@@ -179,7 +186,6 @@ header {
                 right: 10px;
                 bottom: 10px;
                 width: 40px;
-                @include border-radius(0px 0px 10px 0px);
             }
         }
     }
@@ -241,4 +247,68 @@ header {
     width: 100%;
     clear: both;
     margin-top: 50px;
+}
+
+.basket {
+    font-size: 19px;
+    margin-top: 20px;
+    margin-left: 45px;
+    position: relative;
+    &:before {
+        font-family: 'FontAwesome';
+        content: "\f07a";
+        -webkit-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in;
+        color: #a0bb33;
+        font-size: 20px;
+        margin-right: 10px;
+        margin-left: 6px;
+        position: relative;
+        top: 0px;
+    }
+    .cart_num {
+        a {
+            text-decoration: none;
+            color: $colorBlue;
+        }
+    }
+}
+
+.phone {
+    margin-top: 15px;
+    position: relative;
+    &:before {
+        font-family: 'FontAwesome';
+        content: "\f095";
+        -webkit-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in;
+        color: #fa9717;
+        font-size: 25px;
+        margin-right: 6px;
+        margin-left: 6px;
+        position: relative;
+        top: 0px;
+    }
+    .phone-number {
+        font-size: 18px;
+        line-height: 36px;
+        color: $colorGreen;
+        font-weight: bold;
+    }
+}
+
+.logo {
+    img {
+        width: 100%;
+    }
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: $colorBlue;
+    border-color: $colorBlue;
 }

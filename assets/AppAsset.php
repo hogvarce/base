@@ -28,6 +28,7 @@ class AppAsset extends AssetBundle
         '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js',
         '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js',
         '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js',
+        'js/product/cookie.js',
         'js/product/wow.min.js',
         'js/product/purl.js',
         'js/product/tm-stick-up.js',

@@ -1,70 +1,6 @@
 * {
   box-sizing: border-box; }
 
-.good {
-  margin-bottom: 20px; }
-  .good .insideBlock {
-    width: 230px;
-    height: 330px;
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 20px 20px 40px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 3px 3px 15px #000;
-    -moz-box-shadow: 3px 3px 15px #000;
-    -ms-box-shadow: 3px 3px 15px #000;
-    box-shadow: 3px 3px 15px #000;
-    position: relative; }
-    .good .insideBlock img {
-      background: url("/img/no_photo.png") no-repeat center center;
-      width: 200px;
-      height: 200px; }
-    .good .insideBlock .price {
-      display: block;
-      text-align: center;
-      margin: 10px auto;
-      font-size: 16px;
-      color: #ccc; }
-      .good .insideBlock .price strong {
-        color: #337ab7; }
-    .good .insideBlock .buy {
-      position: absolute;
-      width: 100px;
-      text-align: center;
-      margin-left: -50px;
-      bottom: 10px;
-      left: 50%; }
-      .good .insideBlock .buy + input {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        width: 40px;
-        -webkit-border-radius: 0px 0px 10px 0px;
-        -moz-border-radius: 0px 0px 10px 0px;
-        -ms-border-radius: 0px 0px 10px 0px;
-        border-radius: 0px 0px 10px 0px; }
-
-.pagination {
-  width: 100%;
-  overflow: hidden; }
-  .pagination a {
-    display: block;
-    float: left;
-    margin-left: 5px; }
-    .pagination a span {
-      display: block;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      -ms-border-radius: 2px;
-      border-radius: 2px;
-      padding: 5px; }
-
-* {
-  box-sizing: border-box; }
-
 header {
   background-color: #f2f2f2;
   height: 57px;
@@ -73,6 +9,8 @@ header {
 
 .wrap {
   overflow: hidden; }
+  .wrap > .container.box-layout {
+    padding: 20px 15px; }
   .wrap .content {
     min-height: 500px; }
 
@@ -165,6 +103,11 @@ header {
     -ms-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     position: relative; }
+    .good .insideBlock:hover {
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
     .good .insideBlock img.good-preview {
       background: url("/img/no_photo.png") no-repeat center center;
       width: 200px;
@@ -199,11 +142,7 @@ header {
         position: absolute;
         right: 10px;
         bottom: 10px;
-        width: 40px;
-        -webkit-border-radius: 0px 0px 10px 0px;
-        -moz-border-radius: 0px 0px 10px 0px;
-        -ms-border-radius: 0px 0px 10px 0px;
-        border-radius: 0px 0px 10px 0px; }
+        width: 40px; }
 
 .pagination {
   width: 100%;
@@ -256,3 +195,55 @@ header {
   width: 100%;
   clear: both;
   margin-top: 50px; }
+
+.basket {
+  font-size: 19px;
+  margin-top: 20px;
+  margin-left: 45px;
+  position: relative; }
+  .basket:before, .navigation .basket.container:after {
+    font-family: 'FontAwesome';
+    content: "\f07a";
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    color: #a0bb33;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 6px;
+    position: relative;
+    top: 0px; }
+  .basket .cart_num a {
+    text-decoration: none;
+    color: #17a6f5; }
+
+.phone {
+  margin-top: 15px;
+  position: relative; }
+  .phone:before, .navigation .phone.container:after {
+    font-family: 'FontAwesome';
+    content: "\f095";
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    color: #fa9717;
+    font-size: 25px;
+    margin-right: 6px;
+    margin-left: 6px;
+    position: relative;
+    top: 0px; }
+  .phone .phone-number {
+    font-size: 18px;
+    line-height: 36px;
+    color: #adc846;
+    font-weight: bold; }
+
+.logo img {
+  width: 100%; }
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #17a6f5;
+  border-color: #17a6f5; }
