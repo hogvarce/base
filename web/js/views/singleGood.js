@@ -2,7 +2,7 @@ var app = app || {};
 
 app.singleGoodView = Backbone.View.extend({
     tagName: "li",
-    className: "col-xs-12 col-sm-6 col-md-4 col-lg-4 good wow animate zoomIn",
+    className: "good wow animate zoomIn", //col-xs-12 col-sm-6 col-md-4 col-lg-4 
     template: _.template( $('#Good').html() || '' ) ,
     render: function(){
         var goodTemplate = this.template(this.model.toJSON());

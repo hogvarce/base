@@ -17,7 +17,7 @@ use yii\widgets\DetailView;
 
     <?php if ( $model->goods_on_page ): ?>
     <div class="blockGoods">
-        <div class="col-xs-3">
+        <div class="col-xs-12 col-sm-4">
             <?php
                 $categoryGoods = \app\models\GoodsCategory::find()->all();
                 echo '<ul class="side-menu list-unstyled">';
@@ -28,7 +28,7 @@ use yii\widgets\DetailView;
                 echo '</ul>';
             ?>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-12 col-sm-8">
             <div class="goods"></div>
         </div>
     </div>

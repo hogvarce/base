@@ -21,7 +21,6 @@ header {
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.2); }
 
 .navigation {
-  width: 100%;
   position: relative; }
   .navigation.isStuck {
     z-index: 1000;
@@ -50,52 +49,64 @@ header {
       background: #adc846 url("/img/right-shadow.png") left top no-repeat;
       margin-left: 0;
       margin-right: -100%; }
-  .navigation .navbar-nav.nav {
-    padding-left: 15px; }
-    .navigation .navbar-nav.nav li a {
-      font-size: 24px;
-      color: #fff;
-      line-height: 40px;
-      -moz-transition: background-color 0.5s;
-      -o-transition: background-color 0.5s;
-      -webkit-transition: background-color 0.5s;
-      transition: background-color 0.5s; }
-      .navigation .navbar-nav.nav li a:hover, .navigation .navbar-nav.nav li a:focus {
-        background-color: #fdae1b; }
-        .navigation .navbar-nav.nav li a:hover:after, .navigation .navbar-nav.nav li a:focus:after {
-          top: -11px;
-          opacity: 1;
-          visibility: visible; }
-      .navigation .navbar-nav.nav li a:after {
-        content: "\f0d7";
-        font-size: 20px;
-        line-height: 28px;
-        font-family: 'FontAwesome';
+  .navigation .navbar {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    -ms-border-radius: none;
+    border-radius: none; }
+    .navigation .navbar .navbar-nav.nav {
+      padding-left: 15px; }
+      .navigation .navbar .navbar-nav.nav li a {
+        font-size: 24px;
         color: #fff;
-        margin: 0 0 0 -10px;
-        position: absolute;
-        left: 50%;
-        top: -22px;
-        opacity: 0;
-        width: 20px;
-        visibility: hidden;
+        line-height: 40px;
         -moz-transition: background-color 0.5s;
         -o-transition: background-color 0.5s;
         -webkit-transition: background-color 0.5s;
         transition: background-color 0.5s; }
-    .navigation .navbar-nav.nav li.active a {
-      background-color: #fdae1b; }
-      .navigation .navbar-nav.nav li.active a:after {
-        top: -11px;
-        opacity: 1;
-        visibility: visible; }
+        .navigation .navbar .navbar-nav.nav li a:hover, .navigation .navbar .navbar-nav.nav li a:focus {
+          background-color: #fdae1b; }
+          .navigation .navbar .navbar-nav.nav li a:hover:after, .navigation .navbar .navbar-nav.nav li a:focus:after {
+            top: -11px;
+            opacity: 1;
+            visibility: visible; }
+        .navigation .navbar .navbar-nav.nav li a:after {
+          content: "\f0d7";
+          font-size: 20px;
+          line-height: 28px;
+          font-family: 'FontAwesome';
+          color: #fff;
+          margin: 0 0 0 -10px;
+          position: absolute;
+          left: 50%;
+          top: -22px;
+          opacity: 0;
+          width: 20px;
+          visibility: hidden;
+          -moz-transition: background-color 0.5s;
+          -o-transition: background-color 0.5s;
+          -webkit-transition: background-color 0.5s;
+          transition: background-color 0.5s; }
+      .navigation .navbar .navbar-nav.nav li.active a {
+        background-color: #fdae1b; }
+        .navigation .navbar .navbar-nav.nav li.active a:after {
+          top: -11px;
+          opacity: 1;
+          visibility: visible; }
+
+.navbar-toggle .icon-bar {
+  background-color: #fff; }
+
+.navbar-toggle {
+  border-color: #fff; }
 
 .good {
-  margin-bottom: 20px; }
+  margin-bottom: 25px;
+  padding: 0 !important; }
   .good .insideBlock {
-    width: 230px;
-    height: 330px;
-    overflow: hidden;
     margin: 0 auto;
     padding: 20px 20px 40px;
     -webkit-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
@@ -110,8 +121,8 @@ header {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
     .good .insideBlock img.good-preview {
       background: url("/img/no_photo.png") no-repeat center center;
-      width: 200px;
-      height: 200px;
+      min-width: 200px;
+      min-height: 200px;
       margin: 0 auto;
       display: block;
       cursor: pointer; }
@@ -119,8 +130,6 @@ header {
       display: none; }
     .good .insideBlock .good-name {
       width: 100%;
-      height: 20px;
-      overflow: hidden;
       position: relative;
       display: block; }
     .good .insideBlock .price {
@@ -199,7 +208,7 @@ header {
 .basket {
   font-size: 19px;
   margin-top: 20px;
-  margin-left: 45px;
+  margin-left: 35px;
   position: relative; }
   .basket:before, .navigation .basket.container:after {
     font-family: 'FontAwesome';
@@ -247,3 +256,8 @@ header {
 .pagination > .active > span:focus {
   background-color: #17a6f5;
   border-color: #17a6f5; }
+
+@media only screen and (max-width: 768px) {
+  .navigation .container:after,
+  .navigation .container:before, .navigation .container:after {
+    display: none; } }

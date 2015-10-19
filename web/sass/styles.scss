@@ -55,7 +55,6 @@ header {
     @include box-shadow($shadow);
 }
 .navigation {
-    width: 100%;
     position: relative;
     &.isStuck {
         z-index: 1000;
@@ -87,45 +86,51 @@ header {
             margin-right: -100%;
         }
     }
-    .navbar-nav.nav{
-        padding-left: 15px;
-        li {
-            a {
-                font-size: 24px;
-                color: #fff;
-                line-height: 40px;
-                @include transition(background-color .5s);
-                &:hover, &:focus{
-                    background-color: $colorOrange;
+    .navbar {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        @include border-radius(none);
+        .navbar-nav.nav{
+            padding-left: 15px;
+            li {
+                a {
+                    font-size: 24px;
+                    color: #fff;
+                    line-height: 40px;
+                    @include transition(background-color .5s);
+                    &:hover, &:focus{
+                        background-color: $colorOrange;
+                        &:after {
+                            top: -11px;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
                     &:after {
-                        top: -11px;
-                        opacity: 1;
-                        visibility: visible;
+                        content: "\f0d7";
+                        font-size: 20px;
+                        line-height: 28px;
+                        font-family: 'FontAwesome';
+                        color: #fff;
+                        margin: 0 0 0 -10px;
+                        position: absolute;
+                        left: 50%;
+                        top: -22px;
+                        opacity: 0;
+                        width: 20px;
+                        visibility: hidden;
+                        @include transition(background-color .5s);
                     }
                 }
-                &:after {
-                    content: "\f0d7";
-                    font-size: 20px;
-                    line-height: 28px;
-                    font-family: 'FontAwesome';
-                    color: #fff;
-                    margin: 0 0 0 -10px;
-                    position: absolute;
-                    left: 50%;
-                    top: -22px;
-                    opacity: 0;
-                    width: 20px;
-                    visibility: hidden;
-                    @include transition(background-color .5s);
-                }
-            }
-            &.active {
-                a {
-                    background-color: $colorOrange;
-                    &:after {
-                        top: -11px;
-                        opacity: 1;
-                        visibility: visible;
+                &.active {
+                    a {
+                        background-color: $colorOrange;
+                        &:after {
+                            top: -11px;
+                            opacity: 1;
+                            visibility: visible;
+                        }
                     }
                 }
             }
@@ -133,12 +138,20 @@ header {
     }
 }
 
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-toggle {
+    border-color: #fff;
+}
+
 .good {
-       margin-bottom: 20px;
+       margin-bottom: 25px;
+       padding: 0 !important;
       .insideBlock {
-        width: $widthGood;
-        height: $heightGood;
-        overflow: hidden;
+        //width: $widthGood;
+        // height: $heightGood;
+        // overflow: hidden;
         margin: 0 auto;
         padding: 20px 20px 40px;
         @include box-shadow($shadow);
@@ -148,8 +161,10 @@ header {
         }
         img.good-preview {
             background: url('/img/no_photo.png') no-repeat center center;
-            width: 200px;
-            height: 200px;
+            // width: 200px;
+        //    max-width: 400px;
+            min-width: 200px;
+            min-height: 200px;
             margin: 0 auto;
             display: block;
             cursor: pointer;
@@ -159,8 +174,8 @@ header {
         }
         .good-name {
             width: 100%;
-            height: 20px;
-            overflow: hidden;
+            // height: 20px;
+            // overflow: hidden;
             position: relative;
             display: block;
         }
@@ -252,7 +267,7 @@ header {
 .basket {
     font-size: 19px;
     margin-top: 20px;
-    margin-left: 45px;
+    margin-left: 35px;
     position: relative;
     &:before {
         font-family: 'FontAwesome';
@@ -311,4 +326,12 @@ header {
 .pagination > .active > span:focus {
     background-color: $colorBlue;
     border-color: $colorBlue;
+}
+
+
+@media only screen and (max-width: 768px)  {
+    .navigation .container:after,
+    .navigation .container:before {
+        display: none;
+    }
 }

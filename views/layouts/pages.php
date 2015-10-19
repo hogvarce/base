@@ -52,11 +52,19 @@ AppAsset::register($this);
                 <div class="container">
                     <div class="row">
                         <div class="col-sx-12">
-                        <?= Nav::widget([
-                                'options' => ['class' => 'navbar-nav navbar-left'],
-                                'items'   =>  Pages::getItems(),
-                            ]);  ?>
-                        </div>
+                            <nav class="navbar" role="navigation">
+                                <?= Nav::widget([
+                                        'options' => ['class' => 'navbar-nav navbar-left collapse navbar-collapse', 'id' => 'TopMenu'],
+                                        'items'   =>  Pages::getItems(),
+                                    ]);  ?>
+                                </div>
+                            </nav>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#TopMenu">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
                     </div>
                 </div>
             </div>
