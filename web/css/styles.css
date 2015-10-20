@@ -121,7 +121,7 @@ header {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
     .good .insideBlock img.good-preview {
       background: url("/img/no_photo.png") no-repeat center center;
-      min-width: 200px;
+      width: 200px;
       min-height: 200px;
       margin: 0 auto;
       display: block;
@@ -130,6 +130,7 @@ header {
       display: none; }
     .good .insideBlock .good-name {
       width: 100%;
+      max-width: 200px;
       position: relative;
       display: block; }
     .good .insideBlock .price {
@@ -142,16 +143,47 @@ header {
         color: #17a6f5; }
     .good .insideBlock .buy {
       position: absolute;
-      width: 100px;
       text-align: center;
-      margin-left: -50px;
       bottom: 10px;
-      left: 50%; }
+      left: 10px;
+      opacity: 0; }
       .good .insideBlock .buy + input {
         position: absolute;
         right: 10px;
         bottom: 10px;
         width: 40px; }
+
+.good.masonry-brick .insideBlock .buy {
+  opacity: 1; }
+
+a.addtocart-button {
+  background: #adc846;
+  width: auto;
+  height: auto;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  padding: 10px 14px 9px;
+  border-radius: 0;
+  position: relative;
+  line-height: 32px;
+  border: 0; }
+  a.addtocart-button > span:before, .navigation a.addtocart-button > span.container:after {
+    color: #fff;
+    font-style: normal;
+    content: "\f07a ";
+    font-size: 31px;
+    line-height: 32px;
+    font-family: FontAwesome;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    margin-right: 0px; }
+  a.addtocart-button > span span {
+    text-indent: -9999px;
+    display: none !important; }
 
 .pagination {
   width: 100%;

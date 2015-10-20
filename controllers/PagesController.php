@@ -103,4 +103,11 @@ class PagesController extends Controller
         ]);
     }
 
+    public function actionBasket()
+    {
+        return $this->render('basket',[
+            'model' => $model,
+            ]);
+    }
+
 }

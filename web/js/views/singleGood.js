@@ -2,7 +2,7 @@ var app = app || {};
 
 app.singleGoodView = Backbone.View.extend({
     tagName: "li",
-    className: "good wow animate zoomIn", //col-xs-12 col-sm-6 col-md-4 col-lg-4 
+    className: "good wow animate zoomIn", //col-xs-12 col-sm-6 col-md-4 col-lg-4
     template: _.template( $('#Good').html() || '' ) ,
     render: function(){
         var goodTemplate = this.template(this.model.toJSON());
@@ -22,14 +22,16 @@ app.singleGoodView = Backbone.View.extend({
             content: frameContent
         });
     },
-    Buy: function(){
+    Buy: function(e){
+        e.preventDefault();
         var itemBuy = {
                 goodID          : this.model.get('id'),
                 goodTitle       : this.model.get('pagetitle'),
                 goodArticle     : this.model.get('articale'),
                 goodColor       : this.model.get('color'),
                 goodCount       : this.model.get('count'),
-                goodCountInPack : this.model.get('count_in_pack')
+                goodCountInPack : this.model.get('count_in_pack'),
+                goodPrice       : this.model.get('price')
             };
         var basket = JSON.parse(localStorage.getItem('basket') || '[]');
         basket.push(itemBuy);

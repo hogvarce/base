@@ -40,7 +40,7 @@ AppAsset::register($this);
                 </div>
                 <div class="col-md-7 col-lg-7 col-sm-7">
                         <div class="pull-right basket">
-                            <span>Корзина: </span><span class="cart_num"><a href="javascript:">0</a></span>
+                            <span>Корзина: </span><span class="cart_num"><a href="/basket">0</a></span>
                         </div>
                         <div class="pull-right phone">
                             <span>Телефон: </span><span class="phone-number">8(812) 985 76 78</span>
@@ -87,7 +87,8 @@ AppAsset::register($this);
             <img itemprop="image" class="good-preview" src="/<%=image%>" title='<%=pagetitle%>' alt='<%=pagetitle%>'>
             <div class="description" itemprop="description"><%= content %></div>
             <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price"><meta itemprop="priceCurrency" content="RUB" /><strong itemprop="price"><%= price %></strong> руб.</p>
-            <button  class="buy">Купить</button><input type="number" value="<%= count %>" step="<%= count %>" min="<%= count %>" max="99" />
+            <a data-toggle="tooltip" data-placement="top" title="" name="addtocart" href="#" class="addtocart-button btn btn-primary buy" data-original-title="В корзину"><span><span>В корзину</span></span></a>
+            <input type="number" value="<%= count %>" step="<%= count %>" min="<%= count %>" max="99" />
         </div>
     </script>
 

@@ -161,9 +161,7 @@ header {
         }
         img.good-preview {
             background: url('/img/no_photo.png') no-repeat center center;
-            // width: 200px;
-        //    max-width: 400px;
-            min-width: 200px;
+            width: 200px;
             min-height: 200px;
             margin: 0 auto;
             display: block;
@@ -174,6 +172,7 @@ header {
         }
         .good-name {
             width: 100%;
+            max-width: 200px;
             // height: 20px;
             // overflow: hidden;
             position: relative;
@@ -191,11 +190,10 @@ header {
         }
         .buy {
             position: absolute;
-            width: 100px;
             text-align: center;
-            margin-left: -50px;
             bottom: 10px;
-            left: 50%;
+            left:10px;
+            opacity: 0;
             + input {
                 position: absolute;
                 right: 10px;
@@ -203,6 +201,38 @@ header {
                 width: 40px;
             }
         }
+    }
+}
+.good.masonry-brick .insideBlock .buy { opacity: 1; }
+a.addtocart-button {
+   background: #adc846;
+   width: auto;
+   height: auto;
+   color: #fff;
+   text-align: center;
+   -webkit-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+   padding: 10px 14px 9px;
+   border-radius: 0;
+   position: relative;
+   line-height: 32px;
+   border: 0;
+   > span:before {
+        color: #fff;
+        font-style: normal;
+        content: "\f07a ";
+        font-size: 31px;
+        line-height: 32px;
+        font-family: FontAwesome;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        margin-right: 0px;
+    }
+   > span span {
+        text-indent: -9999px;
+        display: none!important;
     }
 }
 

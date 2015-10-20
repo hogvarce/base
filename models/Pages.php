@@ -58,7 +58,7 @@ class Pages extends \yii\db\ActiveRecord
         $items = [];
         $models = parent::find()->orderBy("order_page")->all();
         foreach($models as $model) {
-            $items[] = ['label' => $model->title, 'url' => ($model->slug == '/') ? $model->slug : '/pages/'.$model->slug];
+            $items[] = ['label' => $model->title, 'url' => ($model->slug == '/') ? $model->slug : '/'.$model->slug];
         }
         return $items;
     }

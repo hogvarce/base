@@ -57,7 +57,7 @@ class DefaultController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect('/admin');
+            return $this->redirect('/admin/');
         }
         return $this->render('login', [
             'model' => $model,
