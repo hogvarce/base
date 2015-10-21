@@ -1,13 +1,29 @@
 <div class="pages-view">
 </div>
 <script type="text/template" id="basket-list">
-            <ul>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Наименование</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Общая цена</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <% _.each(basket, function(item, e){ %>
-
-                    <li><%= item.goodTitle %> - <%= item.goodCount %> = <%= item.goodCount * item.goodPrice %></li>
-
+                    <tr>
+                        <th scope="row"><%= ++e %></th>
+                        <td><%= item.goodTitle %></td>
+                        <td><%= item.goodCount %></td>
+                        <td><%= item.goodPrice %></td>
+                        <td><%= item.goodCount * item.goodPrice %></td>
+                    </tr>
                 <% }); %>
-            </ul>
+                <tr><th colspan="4">Итого: </th><th></th></tr>
+                </tbody>
+            </table>
 </script>
 <script type="text/javascript">
     window.onload = function(){
