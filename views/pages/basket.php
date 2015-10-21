@@ -5,6 +5,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Изображение</th>
                         <th>Наименование</th>
                         <th>Количество</th>
                         <th>Цена</th>
@@ -15,13 +16,20 @@
                 <% _.each(basket, function(item, e){ %>
                     <tr>
                         <th scope="row"><%= ++e %></th>
-                        <td><%= item.goodTitle %></td>
-                        <td><%= item.goodCount %></td>
-                        <td><%= item.goodPrice %></td>
-                        <td><%= item.goodCount * item.goodPrice %></td>
+                        <td><img src="/<%= item.image %>" width="100" alt="<%= item.pagetitle %>" /></td>
+                        <td><%= item.pagetitle %></td>
+                        <td>
+                            <input  value="<%= item.count %>" class="counter" step="<%=  item.count %>" />
+                            <span class="quantity-controls">
+                                <i class="fa fa-plus quantity-controls quantity-plus"></i>
+                                <i class="fa fa-minus quantity-controls quantity-minus"></i>
+                            </span>
+                        </td>
+                        <td><%= item.price %></td>
+                        <td><%= item.count * item.price %></td>
                     </tr>
                 <% }); %>
-                <tr><th colspan="4">Итого: </th><th></th></tr>
+                <tr><th colspan="5">Итого: </th><th></th></tr>
                 </tbody>
             </table>
 </script>

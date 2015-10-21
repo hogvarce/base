@@ -108,12 +108,13 @@ header {
   padding: 0 !important; }
   .good .insideBlock {
     margin: 0 auto;
-    padding: 20px 20px 40px;
+    padding: 20px 20px 50px;
     -webkit-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     -ms-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
-    position: relative; }
+    position: relative;
+    background-color: #fff; }
     .good .insideBlock:hover {
       -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -147,11 +148,57 @@ header {
       bottom: 10px;
       left: 10px;
       opacity: 0; }
-      .good .insideBlock .buy + input {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        width: 40px; }
+    .good .insideBlock .counter {
+      position: absolute;
+      right: 40px;
+      bottom: 10px; }
+    .good .insideBlock .quantity-controls {
+      position: absolute;
+      right: 10px;
+      bottom: 10px; }
+      .good .insideBlock .quantity-controls i {
+        position: relative;
+        left: 0;
+        top: 5px;
+        display: block;
+        cursor: pointer;
+        margin-bottom: 5px;
+        padding: 3px 6px;
+        height: 20px;
+        font-size: 12px;
+        color: #777777;
+        vertical-align: middle;
+        background-color: #fbfbfb;
+        background-image: none;
+        border: 1px solid #d6d4d4; }
+
+.counter, .good .insideBlock .counter {
+  width: 75px;
+  line-height: 20px;
+  padding: 0 12px;
+  height: 45px;
+  display: inline-block;
+  text-align: center; }
+
+.quantity-controls i, .good .insideBlock .quantity-controls i {
+  position: relative;
+  left: 0;
+  top: 5px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 3px 6px;
+  height: 20px;
+  width: 24px;
+  font-size: 12px;
+  color: #777777;
+  vertical-align: middle;
+  background-color: #fbfbfb;
+  background-image: none;
+  border: 1px solid #d6d4d4; }
+
+.top-block {
+  margin: 20px auto; }
 
 .good.masonry-brick .insideBlock .buy {
   opacity: 1; }
@@ -164,10 +211,9 @@ a.addtocart-button {
   text-align: center;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  padding: 10px 14px 9px;
+  padding: 6px 30px;
   border-radius: 0;
   position: relative;
-  line-height: 32px;
   border: 0; }
   a.addtocart-button > span:before, .navigation a.addtocart-button > span.container:after {
     color: #fff;
@@ -253,9 +299,11 @@ a.addtocart-button {
     margin-left: 6px;
     position: relative;
     top: 0px; }
-  .basket .cart_num a {
-    text-decoration: none;
-    color: #17a6f5; }
+  .basket .cart_num {
+    position: relative; }
+    .basket .cart_num a {
+      text-decoration: none;
+      color: #17a6f5; }
 
 .phone {
   margin-top: 15px;

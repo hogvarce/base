@@ -153,9 +153,10 @@ header {
         // height: $heightGood;
         // overflow: hidden;
         margin: 0 auto;
-        padding: 20px 20px 40px;
+        padding: 20px 20px 50px;
         @include box-shadow($shadow);
         position: relative;
+        background-color: #fff;
         &:hover {
             @include box-shadow(0 0 15px rgba(0, 0, 0, 0.3));
         }
@@ -194,15 +195,69 @@ header {
             bottom: 10px;
             left:10px;
             opacity: 0;
-            + input {
-                position: absolute;
-                right: 10px;
-                bottom: 10px;
-                width: 40px;
+        }
+        .counter {
+            @extend .counter;
+            position: absolute;
+            right: 40px;
+            bottom: 10px;
+        }
+        .quantity-controls {
+            @extend  .quantity-controls;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            i {
+                position: relative;
+                left: 0;
+                top: 5px;
+                display: block;
+                cursor: pointer;
+                margin-bottom: 5px;
+                padding: 3px 6px;
+                height: 20px;
+                font-size: 12px;
+                color: #777777;
+                vertical-align: middle;
+                background-color: #fbfbfb;
+                background-image: none;
+                border: 1px solid #d6d4d4;
             }
         }
     }
 }
+
+.counter {
+    width: 75px;
+    line-height: 20px;
+    padding: 0 12px;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+}
+.quantity-controls {
+    i {
+        position: relative;
+        left: 0;
+        top: 5px;
+        display: block;
+        cursor: pointer;
+        margin-bottom: 5px;
+        padding: 3px 6px;
+        height: 20px;
+        width: 24px;
+        font-size: 12px;
+        color: #777777;
+        vertical-align: middle;
+        background-color: #fbfbfb;
+        background-image: none;
+        border: 1px solid #d6d4d4;
+    }
+}
+.top-block {
+    margin: 20px auto;
+}
+
 .good.masonry-brick .insideBlock .buy { opacity: 1; }
 a.addtocart-button {
    background: #adc846;
@@ -212,10 +267,9 @@ a.addtocart-button {
    text-align: center;
    -webkit-transition: all 0.2s linear;
    transition: all 0.2s linear;
-   padding: 10px 14px 9px;
+   padding: 6px 30px;
    border-radius: 0;
    position: relative;
-   line-height: 32px;
    border: 0;
    > span:before {
         color: #fff;
@@ -312,6 +366,7 @@ a.addtocart-button {
         top: 0px;
     }
     .cart_num {
+        position: relative;
         a {
             text-decoration: none;
             color: $colorBlue;

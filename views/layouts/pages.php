@@ -88,7 +88,11 @@ AppAsset::register($this);
             <div class="description" itemprop="description"><%= content %></div>
             <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price"><meta itemprop="priceCurrency" content="RUB" /><strong itemprop="price"><%= price %></strong> руб.</p>
             <a data-toggle="tooltip" data-placement="top" title="" name="addtocart" href="#" class="addtocart-button btn btn-primary buy" data-original-title="В корзину"><span><span>В корзину</span></span></a>
-            <input type="number" value="<%= count %>" step="<%= count %>" min="<%= count %>" max="99" />
+            <input  value="<%= count %>" class="counter" step="<%= count %>" />
+            <span class="quantity-controls">
+                <i class="fa fa-plus quantity-controls quantity-plus"></i>
+                <i class="fa fa-minus quantity-controls quantity-minus"></i>
+            </span>
         </div>
     </script>
 

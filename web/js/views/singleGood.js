@@ -10,11 +10,24 @@ app.singleGoodView = Backbone.View.extend({
         return this;
     },
     events:{
-        'change .buy + input': function(e){
-            this.model.set('count',$(e.target).val());
-        },
         'click img.good-preview': 'openFrame',
-        'click .buy': 'Buy'
+        'click .buy': 'Buy',
+        'click .quantity-controls': 'changeCount'
+    },
+    changeCount: function(e){
+        e.stopPropagation();
+        var $th = $(e.target),
+            $counter = this.$('.counter');
+        switch( $th.attr('class') ){
+            case "fa fa-plus quantity-controls quantity-plus":
+                $counter.val( parseInt( $counter.val() ) + parseInt( $counter.attr("step") ) );
+                break;
+            case "fa fa-minus quantity-controls quantity-minus":
+                if( $counter.val() > $counter.attr("step") )
+                    $counter.val( parseInt( $counter.val() ) - parseInt( $counter.attr("step") ) );
+                break;
+        }
+        this.model.set('count', $counter.val());
     },
     openFrame: function(){
         var frameContent = this.$('.description').html();
@@ -24,17 +37,8 @@ app.singleGoodView = Backbone.View.extend({
     },
     Buy: function(e){
         e.preventDefault();
-        var itemBuy = {
-                goodID          : this.model.get('id'),
-                goodTitle       : this.model.get('pagetitle'),
-                goodArticle     : this.model.get('articale'),
-                goodColor       : this.model.get('color'),
-                goodCount       : this.model.get('count'),
-                goodCountInPack : this.model.get('count_in_pack'),
-                goodPrice       : this.model.get('price')
-            };
         var basket = JSON.parse(localStorage.getItem('basket') || '[]');
-        basket.push(itemBuy);
+        basket.push(this.model);
         app.BasketModel.set('goodsCount', basket.length);
         localStorage.setItem('basket', JSON.stringify(basket));
     }
