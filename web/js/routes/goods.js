@@ -19,15 +19,19 @@ app.Router = Backbone.Router.extend({
                 currentPage = options.xhr.getResponseHeader('X-Pagination-Current-Page'),
                 pagination = '<div class="pagination">',
                 active = '';
-            for(var i = 1; i <= paginCount; i++)
-            {
-                active = (currentPage == i) ? 'class="pagin active"' : 'class="pagin"';
-                pagination += '<a '+active+'href="?pagin='+i+'&category='+category+'"><span>'+i+'</span></a>';
+            if( paginCount > 1 ){
+                for(var i = 1; i <= paginCount; i++)
+                {
+                    active = (currentPage == i) ? 'class="pagin active"' : 'class="pagin"';
+                    pagination += '<a '+active+'href="?pagin='+i+'&category='+category+'"><span>'+i+'</span></a>';
+                }
+                pagination += '</div>';
+                $(".goods").append(goodsGroupView.render().el)
+                    .before(pagination)
+                        .after(pagination);
+            }else{
+                $(".goods").append(goodsGroupView.render().el);
             }
-            pagination += '</div>';
-            $(".goods").append(goodsGroupView.render().el)
-                .before(pagination)
-                    .after(pagination);
         }});
     }
     // goods: function(page){
