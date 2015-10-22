@@ -1,4 +1,4 @@
-<div class="pages-view">
+<div class="basket-view">
 </div>
 <script type="text/template" id="basket-list">
             <table class="table table-striped">
@@ -13,35 +13,28 @@
                     </tr>
                 </thead>
                 <tbody>
+                <% var sum = 0; %>
                 <% _.each(basket, function(item, e){ %>
+                <%
+                    goodSum = item.count * item.price;
+                    sum += goodSum;
+                %>
                     <tr>
                         <th scope="row"><%= ++e %></th>
                         <td><img src="/<%= item.image %>" width="100" alt="<%= item.pagetitle %>" /></td>
                         <td><%= item.pagetitle %></td>
                         <td>
-                            <input  value="<%= item.count %>" class="counter" step="<%=  item.count %>" />
+                            <input  value="<%= item.count %>" class="counter" step="1" />
                             <span class="quantity-controls">
                                 <i class="fa fa-plus quantity-controls quantity-plus"></i>
                                 <i class="fa fa-minus quantity-controls quantity-minus"></i>
                             </span>
                         </td>
                         <td><%= item.price %></td>
-                        <td><%= item.count * item.price %></td>
+                        <td><%= goodSum %></td>
                     </tr>
                 <% }); %>
-                <tr><th colspan="5">Итого: </th><th></th></tr>
+                <tr><th colspan="5">Итого: </th><th><%= sum %> <%=  declOfNum(sum, ["рубль", "рубля", "рублей"]) %></th></tr>
                 </tbody>
             </table>
-</script>
-<script type="text/javascript">
-    window.onload = function(){
-        var template = _.template(
-              $( "#basket-list" ).html()
-          );
-         var templateData = {
-             basket: JSON.parse(localStorage.getItem('basket') || '[]')
-         };
-         console.log(templateData);
-            $('.pages-view').html( template( templateData ) );
-    };
 </script>
