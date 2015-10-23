@@ -16,8 +16,8 @@
                 <% var sum = 0; %>
                 <% _.each(basket, function(item, e){ %>
                 <%
-                    goodSum = item.count * item.price;
-                    sum += goodSum;
+                    goodSum = Math.round((item.count * item.price)*100)/100;
+                    sum += Math.round((goodSum)*100)/100;
                 %>
                     <tr>
                         <th scope="row"><%= ++e %></th>
