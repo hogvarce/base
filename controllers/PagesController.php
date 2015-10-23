@@ -10,6 +10,7 @@ use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Customers;
 
 class PagesController extends Controller
 {
@@ -106,6 +107,14 @@ class PagesController extends Controller
     public function actionBasket()
     {
         return $this->render('basket',[
+            'model' => $model,
+            ]);
+    }
+
+    public function actionOrder()
+    {
+        $model = new Customers();
+        return $this->render('order',[
             'model' => $model,
             ]);
     }

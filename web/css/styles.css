@@ -231,6 +231,13 @@ a.addtocart-button {
     text-indent: -9999px;
     display: none !important; }
 
+.basket-view td {
+  position: relative; }
+  .basket-view td span.quantity-controls, .basket-view td .good .insideBlock span.quantity-controls, .good .insideBlock .basket-view td span.quantity-controls {
+    position: absolute;
+    top: 4px;
+    left: 88px; }
+
 .pagination {
   width: 100%;
   overflow: hidden; }
@@ -336,6 +343,15 @@ a.addtocart-button {
 .pagination > .active > span:focus {
   background-color: #17a6f5;
   border-color: #17a6f5; }
+
+.makeBuy > a {
+  background-color: #adc846;
+  color: #fff;
+  padding: 20px 10px;
+  display: block;
+  text-decoration: none; }
+  .makeBuy > a:hover {
+    background-color: #17a6f5; }
 
 @media only screen and (max-width: 768px) {
   .navigation .container:after,

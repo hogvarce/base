@@ -34,7 +34,11 @@
                         <td><%= goodSum %></td>
                     </tr>
                 <% }); %>
-                <tr><th colspan="5">Итого: </th><th><%= sum %> <%=  declOfNum(sum, ["рубль", "рубля", "рублей"]) %></th></tr>
+                <tr><th colspan="5">Итого: </th><th><%= sum %><br><%=  declOfNum(Math.round(sum), ["рубль", "рубля", "рублей"]) %></th></tr>
                 </tbody>
             </table>
+            <div class="makeBuy">
+                <a href="/order" class="pull-right">Сделать заказ</a>
+            </div>
+            <div class="clearfix"></div>
 </script>

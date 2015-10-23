@@ -290,6 +290,17 @@ a.addtocart-button {
     }
 }
 
+.basket-view {
+    td{
+        position: relative;
+        span.quantity-controls {
+            position: absolute;
+            top: 4px;
+            left: 88px;
+        }
+    }
+}
+
 .pagination {
     width: 100%;
     overflow: hidden;
@@ -411,6 +422,19 @@ a.addtocart-button {
 .pagination > .active > span:focus {
     background-color: $colorBlue;
     border-color: $colorBlue;
+}
+
+.makeBuy {
+    > a {
+        background-color: $colorGreen;
+        color: #fff;
+        padding: 20px 10px;
+        display: block;
+        text-decoration: none;
+        &:hover {
+            background-color: $colorBlue;
+        }
+    }
 }
 
 

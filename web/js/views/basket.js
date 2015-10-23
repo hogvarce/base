@@ -12,12 +12,13 @@ app.basket = Backbone.View.extend({
     },
     events:{
         'change .counter': 'changeCount',
-        'click .quantity-controls' : 'changeQuantity'
+        'click .quantity-controls' : 'changeQuantity',
+        'click .makeBuy': 'makeBuy'
     },
     changeCount: function(e){
         var $counter = $(e.target),
             inx = $counter.parent().parent().index();
-            
+
         this.model.basket[inx].count = parseInt($counter.val()) || 1;
 
         localStorage.setItem('basket', JSON.stringify(this.model.basket));

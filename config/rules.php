@@ -14,6 +14,7 @@
         'controller' => 'api/category',
     ],
     'basket' => 'pages/basket',
+    'order'  => 'pages/order',
     '<slug:\w+>' => 'pages/index',
     // '<controller:(pages)>/<slug:\w+>/<pagination:\d+>' => '<controller>/index',
     // '<controller:(pages)>/<slug:\w+>/<pagination:\d+>/<category:\d+>' => '<controller>/index',
