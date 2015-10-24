@@ -293,6 +293,17 @@ a.addtocart-button {
         color: #adc846; }
         .side-menu li a:hover:before, .side-menu li .navigation a.container:hover:after, .navigation .side-menu li a.container:hover:after, .side-menu li a:focus:before, .side-menu li .navigation a.container:focus:after, .navigation .side-menu li a.container:focus:after {
           color: #414141; }
+    .side-menu li.active a {
+      color: #adc846; }
+      .side-menu li.active a:before, .side-menu li.active .navigation a.container:after, .navigation .side-menu li.active a.container:after {
+        color: #414141; }
+    .side-menu li.all {
+      background-color: #414141; }
+      .side-menu li.all a {
+        color: #fff;
+        text-transform: uppercase; }
+        .side-menu li.all a:before, .side-menu li.all .navigation a.container:after, .navigation .side-menu li.all a.container:after {
+          display: none; }
 
 .blockGoods {
   width: 100%;

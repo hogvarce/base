@@ -362,6 +362,24 @@ a.addtocart-button {
                 }
             }
         }
+        &.active {
+            a {
+                color: $colorGreen;
+                &:before {
+                    color: $colorBlack;
+                }
+            }
+        }
+        &.all {
+            background-color: $colorBlack;
+            a {
+                color: #fff;
+                text-transform: uppercase;
+                &:before {
+                    display: none;
+                }
+            }
+        }
     }
 }
 

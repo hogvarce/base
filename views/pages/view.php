@@ -20,10 +20,13 @@ use yii\widgets\DetailView;
         <div class="col-xs-12 col-sm-4">
             <?php
                 $categoryGoods = \app\models\GoodsCategory::find()->all();
+                $activeCategory = Yii::$app->getRequest()->getQueryParam('category');
                 echo '<ul class="side-menu list-unstyled">';
-                echo '<li><a href="javascript:addParamUrl(\'category\', 0);">Все товары</a></li>';
+                echo '<li class="all"><a href="javascript:addParamUrl(\'category\', 0);">Все товары</a></li>';
                 foreach ($categoryGoods as $category) {
-                    echo '<li><a href="javascript:addParamUrl(\'category\', '.$category->id.');">'.$category->title_category.'</a></li>';
+                    if( $activeCategory == $category->id ) $active = " class='active'";
+                    else  $active = '';
+                    echo '<li'. $active .'><a href="javascript:addParamUrl(\'category\', '.$category->id.');">'.$category->title_category.'</a></li>';
                 }
                 echo '</ul>';
             ?>

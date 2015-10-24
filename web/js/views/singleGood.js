@@ -32,6 +32,12 @@ app.singleGoodView = Backbone.View.extend({
     openFrame: function(){
         var frameContent = this.$('.description').html();
         $.fancybox({
+            beforeLoad: function(){
+                $('html, body').addClass('autoScroll');
+            },
+            afterClose: function(){
+                $('html, body').removeClass('autoScroll');
+            },
             content: frameContent
         });
     },

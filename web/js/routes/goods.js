@@ -1,9 +1,12 @@
 var app = app || {};
 
-app.Router = Backbone.Router.extend({
+app.goodsRoute = Backbone.Router.extend({
 
     routes: {},
     initialize: function(){
+        this.render();
+    },
+    render: function(){
         var pagin    = parseInt($.url().param('pagin'), 10) || 1,
             category = parseInt($.url().param('category'), 10) || 0;
         var goodsGroup = new app.GoodsCollections();
@@ -34,28 +37,4 @@ app.Router = Backbone.Router.extend({
             }
         }});
     }
-    // goods: function(page){
-    //
-    //     var page = parseInt(page) || '1';
-    //     var goodsGroup = new app.GoodsCollections();
-    //     console.log(page);
-    //     goodsGroup.url ="/api/goods?page="+page;
-    //     goodsGroup.fetch({success:function(collection, response, options){
-    //         var goodsGroupView = new app.allGoodsViews({ collection: collection }),
-    //             paginCount = options.xhr.getResponseHeader('X-Pagination-Page-Count'),
-    //             currentPage = options.xhr.getResponseHeader('X-Pagination-Current-Page'),
-    //             pagination = '<div class="pagination">',
-    //             active = '';
-    //         for(var i = 1; i <= paginCount; i++)
-    //         {
-    //             active = (currentPage == i) ? 'class="active"' : '';
-    //             pagination += '<a '+active+'href="/pages/goods/'+i+'"><span>'+i+'</span></a>';
-    //         }
-    //         pagination += '</div>';
-    //         $(".goods").append(goodsGroupView.render().el)
-    //             .before(pagination)
-    //                 .after(pagination);
-    //     }});
-    // }
-
 });

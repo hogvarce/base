@@ -1,6 +1,6 @@
 if ($('.goods').length) {
 
-    var goodsRoute = new app.Router();
+    var goodsRoute = new app.goodsRoute();
 
 }
 
