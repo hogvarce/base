@@ -47,5 +47,22 @@ app.singleGoodView = Backbone.View.extend({
         basket.push(this.model);
         app.BasketModel.set('goodsCount', basket.length);
         localStorage.setItem('basket', JSON.stringify(basket));
+        var imgAnimate   = this.$('.good-preview').clone().appendTo('body');
+        var offsetImg    = this.$('.good-preview').offset();
+        var offsetBasket = $('.cart_num').offset();
+        imgAnimate.css({
+            'position': 'absolute',
+            'top'     : offsetImg.top,
+            'left'    : offsetImg.left
+        }).animate({
+            'top'     : offsetBasket.top,
+            'left'    : offsetBasket.left,
+            'width'   : '0px',
+            'height'  : '0px'
+        }, "fast", function(){
+            this.remove();
+        });
+
+
     }
 });

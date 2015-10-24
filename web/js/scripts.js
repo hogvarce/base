@@ -14,7 +14,6 @@ $(function(){
 
     //load google maps
     if($('#map').length){
-        var map;
         $.ajax({
 	         type: "GET",
 	         url: "//maps.google.com/maps/api/js?sensor=false&callback=initMap",
@@ -35,9 +34,35 @@ $(function(){
 }());
 
 function initMap() {
+      var map, marker, infowindow;
+      var locationLat = parseFloat(document.getElementById('map').getAttribute('data-x'));
+      var locationLng = parseFloat(document.getElementById('map').getAttribute('data-y'));
+
       map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 59.7459481, lng: 30.0861305},
+        center: {lat: locationLat, lng: locationLng},
         zoom: 12
+      });
+
+      marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: {lat: locationLat, lng: locationLng}
+      });
+      marker.addListener('mouseover', function(){
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+      });
+      marker.addListener('mouseout', function(){
+           marker.setAnimation(null);
+      });
+      marker.addListener('click', function(){
+          map.setCenter(marker.getPosition());
+          infowindow.open(map);
+      });
+
+      infowindow = new google.maps.InfoWindow({
+        content: 'Наш адрес',
+        position: marker.getPosition()
       });
 }
 
