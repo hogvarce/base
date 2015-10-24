@@ -19,7 +19,7 @@
     <?= $form->field($model, 'order_address')->input([]) ?>
     <?= $form->field($model, 'comments')->textArea(['rows' => 6]) ?>
     <div class="form-submit">
-        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary pull-right']) ?>
+        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary pull-right send-order']) ?>
     </div>
     <?php $form = ActiveForm::end(); ?>
 </div>

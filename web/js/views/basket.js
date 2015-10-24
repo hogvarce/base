@@ -57,5 +57,11 @@ app.basket = Backbone.View.extend({
         localStorage.setItem('basket', JSON.stringify(this.model.basket));
 
         this.render();
+    },
+    makeBuy: function(e){
+        e.preventDefault();
+        if( this.model.basket.length ){
+            window.location = $(e.target).attr('href');
+        }
     }
 });

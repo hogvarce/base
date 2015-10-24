@@ -383,6 +383,9 @@ a.addtocart-button {
   .makeBuy > a:hover {
     background-color: #17a6f5; }
 
+#map {
+  height: 350px; }
+
 @media only screen and (max-width: 768px) {
   .navigation .container:after,
   .navigation .container:before, .navigation .container:after {

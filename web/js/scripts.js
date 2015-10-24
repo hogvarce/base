@@ -12,7 +12,34 @@ $(function(){
     //stick navigation on top when scroll
     $('.navigation').tmStickUp();
 
+    //load google maps
+    if($('#map').length){
+        var map;
+        $.ajax({
+	         type: "GET",
+	         url: "//maps.google.com/maps/api/js?sensor=false&callback=initMap",
+	         dataType: "script",
+	         cache: true,
+	     });
+    }
+
+    $(document).on({
+        click: function(e) {
+            e.preventDefault();
+            if( localStorage.getItem('basket').length ){
+                $('#order-form').submit();
+            }
+        }
+    }, '.send-order');
+
 }());
+
+function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 59.7459481, lng: 30.0861305},
+        zoom: 12
+      });
+}
 
 function addParamUrl(key, val){
     var url = window.location.href;
