@@ -291,12 +291,24 @@ a.addtocart-button {
 }
 
 .basket-view {
-    td{
-        position: relative;
-        span.quantity-controls {
-            position: absolute;
-            top: 4px;
-            left: 88px;
+    .table {
+        td {
+            position: relative;
+            span.quantity-controls {
+                position: absolute;
+                top: 4px;
+                left: 88px;
+            }
+            .delete {
+                width:40px;
+                height: 40px;
+                font-size: 0px;
+                display: block;
+                float:right;
+                background: url('/img/delete_Icon.png') no-repeat center center;
+                background-size: 100%;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -377,6 +389,17 @@ a.addtocart-button {
         top: 0px;
     }
     .cart_num {
+        .delete {
+            font-size: 0;
+            background: url('/img/delete_Icon.png') center center no-repeat;
+            background-size: 100%;
+            display: block;
+            float: right;
+            width: 35px;
+            height: 35px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
         position: relative;
         a {
             text-decoration: none;

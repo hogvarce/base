@@ -114,9 +114,23 @@ class PagesController extends Controller
     public function actionOrder()
     {
         $model = new Customers();
+        if ( $model->load(Yii::$app->request->post()) ){
+            // $mail = Yii::$app->mail->compose()
+            //  ->setFrom('fynjy410@yandex.ru')
+            //  ->setTo('fynjy410@yandex.ru')
+            //  ->setSubject('Email sent from Yii2-Swiftmailer');
+            //  if (!$mail->send())
+            //   echo "чет не получилось.";
+            $model->save();
+             return $this->redirect('success-order', 302);
+        }
         return $this->render('order',[
             'model' => $model,
             ]);
+    }
+
+    public function actionSuccess(){
+        return $this->render('success-order');
     }
 
 }

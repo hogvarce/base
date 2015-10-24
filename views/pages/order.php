@@ -18,7 +18,7 @@
     <?= $form->field($model, 'customer_email')->input([]) ?>
     <?= $form->field($model, 'order_address')->input([]) ?>
     <?= $form->field($model, 'comments')->textArea(['rows' => 6]) ?>
-    <div class="form-group">
+    <div class="form-submit">
         <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary pull-right']) ?>
     </div>
     <?php $form = ActiveForm::end(); ?>

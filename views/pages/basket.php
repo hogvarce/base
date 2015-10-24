@@ -31,7 +31,7 @@
                             </span>
                         </td>
                         <td><%= item.price %></td>
-                        <td><%= goodSum %></td>
+                        <td><%= goodSum %> <span class="delete">удалить</span></td>
                     </tr>
                 <% }); %>
                 <tr><th colspan="5">Итого: </th><th><%= sum %><br><%=  declOfNum(Math.round(sum), ["рубль", "рубля", "рублей"]) %></th></tr>

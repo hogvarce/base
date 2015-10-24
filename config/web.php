@@ -25,6 +25,17 @@ $config = [
         ],
     ],
     'components' => [
+        'mail' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'localhost',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                'username' => 'username',
+                'password' => 'password',
+                'port' => '80', // Port 25 is a very common port too
+                'encryption' => 'tls', // It is often used, check your provider or mail server specs
+            ],
+        ],
         'urlManager' => [
           'class' => 'yii\web\UrlManager',
           // Disable index.php

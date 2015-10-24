@@ -11,10 +11,10 @@ if ($('.basket-view').length){
 }
 
 app.BasketModel = new app.Basket();
-var BasketCountView = new app.basketCounter({
+app.BasketCountView = new app.basketCounter({
     model: app.BasketModel
 });
-BasketCountView.render();
+app.BasketCountView.render();
 
 
 Backbone.history.start({pushState: true});

@@ -231,12 +231,21 @@ a.addtocart-button {
     text-indent: -9999px;
     display: none !important; }
 
-.basket-view td {
+.basket-view .table td {
   position: relative; }
-  .basket-view td span.quantity-controls, .basket-view td .good .insideBlock span.quantity-controls, .good .insideBlock .basket-view td span.quantity-controls {
+  .basket-view .table td span.quantity-controls {
     position: absolute;
     top: 4px;
     left: 88px; }
+  .basket-view .table td .delete {
+    width: 40px;
+    height: 40px;
+    font-size: 0px;
+    display: block;
+    float: right;
+    background: url("/img/delete_Icon.png") no-repeat center center;
+    background-size: 100%;
+    cursor: pointer; }
 
 .pagination {
   width: 100%;
@@ -308,6 +317,16 @@ a.addtocart-button {
     top: 0px; }
   .basket .cart_num {
     position: relative; }
+    .basket .cart_num .delete {
+      font-size: 0;
+      background: url("/img/delete_Icon.png") center center no-repeat;
+      background-size: 100%;
+      display: block;
+      float: right;
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+      cursor: pointer; }
     .basket .cart_num a {
       text-decoration: none;
       color: #17a6f5; }
