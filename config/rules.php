@@ -16,6 +16,7 @@
     'basket' => 'pages/basket',
     'order'  => 'pages/order',
     'success-order' => 'pages/success',
+    '' => 'pages/index',
     '<slug:\w+>' => 'pages/index',
     // '<controller:(pages)>/<slug:\w+>/<pagination:\d+>' => '<controller>/index',
     // '<controller:(pages)>/<slug:\w+>/<pagination:\d+>/<category:\d+>' => '<controller>/index',

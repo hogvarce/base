@@ -22,6 +22,36 @@ $(function(){
 	     });
     }
 
+    if( $('.camera_wrap').length ){
+        $('.camera_wrap').camera({ //here I declared some settings, the height and the presence of the thumbnails
+                height: '40%',
+                minHeight: '',
+                pauseOnClick: false,
+                hover: 1,
+                fx: 'simpleFade',
+                loader: 'none',
+                pagination: 1,
+                thumbnails: 0,
+                thumbheight: 75,
+                thumbwidth: 100,
+                time: 10000,
+                transPeriod: 1000,
+                alignment: 'center',
+                autoAdvance: 1,
+                mobileAutoAdvance: 1,
+                portrait: 0,
+                barDirection: 'leftToRight',
+                imagePath: '/img/',
+                lightbox: 'mediaboxck',
+                fullpage: 0,
+				mobileimageresolution: '0',
+                navigationHover: false,
+                navigation: false,
+                playPause: false,
+                barPosition: 'bottom'
+        });
+    }
+
     $(document).on({
         click: function(e) {
             e.preventDefault();

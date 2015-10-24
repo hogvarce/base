@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Pages */
@@ -10,6 +11,14 @@ use yii\widgets\DetailView;
         $this->params['breadcrumbs'][] = $this->title;
     }
 ?>
+
+<?php if(  Url::current() === '/' ): ?>
+
+        <?= $this->render('_slider'); ?>
+
+<?php endif; ?>
+
+
 <div class="pages-view">
 
     <h1><?= Html::encode($model->title) ?></h1>

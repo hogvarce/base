@@ -482,6 +482,27 @@ a.addtocart-button {
     height: 350px;
 }
 
+.camera_wrap {
+    margin: 30px 0px;
+     .camera_caption  {
+        height: 100%;
+         > div{
+             height: 100%;
+             padding: 0;
+             background: none;
+            .camera_caption_desc{
+                 padding: 40px;
+                 text-align: left;
+                 float: right;
+                 height: 100%;
+                 width: 410px;
+                  background: #fa9617;
+                  background: rgba(250, 150, 23, 0.89);
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 768px)  {
     .navigation .container:after,
     .navigation .container:before {
