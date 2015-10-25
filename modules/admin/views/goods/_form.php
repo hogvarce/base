@@ -24,7 +24,9 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'published')->textInput() ?>
+    <?= $form->field($model, 'published')->checkbox() ?>
+
+    <?= $form->field($model, 'new')->checkbox() ?>
 
     <?= $form->field($model, 'parent')->textInput() ?>
 
@@ -45,6 +47,10 @@ use vova07\imperavi\Widget;
         ]); ?>
 
     <?= $form->field($model, 'price')->textInput() ?>
+
+    <?= $form->field($model, 'discount')->textInput() ?>
+
+    <?= Html::img('/'.$model->image, ['alt' => '']) ?>
 
     <?=$form->field($model, 'imageFile')->widget(FileInput::classname(), [
                     'options' => ['multiple' => true, 'accept' => 'upload/*'],

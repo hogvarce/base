@@ -46,9 +46,9 @@ class Goods extends \yii\db\ActiveRecord
     {
         return [
             [['articale', 'pagetitle', 'parent', 'price'], 'required'],
-            [['published', 'parent', 'count_in_pack'], 'integer'],
+            [['published', 'parent', 'count_in_pack', 'new'], 'integer'],
             [['introtext', 'content', 'color'], 'string'],
-            [['price'], 'number'],
+            [['price', 'discount'], 'number'],
             [['articale', 'pagetitle', 'longtitle', 'description', 'image'], 'string', 'max' => 255],
             [['imageFile'], 'file', 'extensions' => 'png, jpg'],
         ];
@@ -61,18 +61,19 @@ class Goods extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'articale' => 'Articale',
-            'pagetitle' => 'Pagetitle',
-            'longtitle' => 'Longtitle',
-            'description' => 'Description',
-            'published' => 'Published',
-            'parent' => 'Parent',
-            'introtext' => 'Introtext',
-            'content' => 'Content',
-            'price' => 'Price',
-            'image' => 'Image',
-            'color' => 'Color',
-            'count_in_pack' => 'Count In Pack',
+            'articale' => 'Артикул',
+            'pagetitle' => 'Название',
+            'longtitle' => 'Полное название',
+            'description' => 'Описание',
+            'published' => 'Опубликовано',
+            'parent' => 'Родитель',
+            'introtext' => 'Вводный текст',
+            'content' => 'Контент',
+            'price' => 'Цена',
+            'image' => 'Крартинка',
+            'color' => 'Цвет',
+            'count_in_pack' => 'Товаров в упаковке',
+            'discount' => 'Скидка'
         ];
     }
 

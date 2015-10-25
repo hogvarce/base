@@ -18,6 +18,7 @@ app.allGoodsViews = Backbone.View.extend({
         return this;
     },
     addGood: function(good){
+        if(good.get('published') != 1) return;
         var goodView = new app.singleGoodView({model: good});
         // var index = this.collection.indexOf(good)+1;
         // (this.index < 6) ? this.index++ : this.index = 1;
