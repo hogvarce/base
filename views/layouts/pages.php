@@ -86,7 +86,12 @@ AppAsset::register($this);
             <p itemprop="name" class="good-name"><%= pagetitle %></p>
             <img itemprop="image" class="good-preview" src="/<%=image%>" title='<%=pagetitle%>' alt='<%=pagetitle%>'>
             <div class="description" itemprop="description"><%= content %></div>
+            <% if(discount){ %>
+                <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price" style="text-decoration:line-through;"><meta itemprop="priceCurrency" content="RUB" /><strong itemprop="price"><%= price %></strong> руб.</p>
+                <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="discount"><meta itemprop="priceCurrency" content="RUB" /><strong itemprop="price"><%= discount %></strong> руб.</p>
+            <% }else{ %>
             <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price"><meta itemprop="priceCurrency" content="RUB" /><strong itemprop="price"><%= price %></strong> руб.</p>
+            <% } %>
             <a data-toggle="tooltip" data-placement="top" title="" name="addtocart" href="#" class="addtocart-button btn btn-primary buy" data-original-title="В корзину"><span><span>В корзину</span></span></a>
             <input  value="<%= count %>" class="counter" step="<%= count %>" />
             <span class="quantity-controls">

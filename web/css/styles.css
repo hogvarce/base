@@ -134,14 +134,19 @@ header {
       max-width: 200px;
       position: relative;
       display: block; }
-    .good .insideBlock .price {
+    .good .insideBlock .price, .good .insideBlock .discount {
       display: block;
       text-align: center;
       margin: 10px auto;
       font-size: 16px;
-      color: #ccc; }
-      .good .insideBlock .price strong {
+      color: #000; }
+      .good .insideBlock .price strong, .good .insideBlock .discount strong {
         color: #17a6f5; }
+    .good .insideBlock .discount {
+      color: #000; }
+      .good .insideBlock .discount strong {
+        color: #adc846;
+        font-size: 130%; }
     .good .insideBlock .buy {
       position: absolute;
       text-align: center;

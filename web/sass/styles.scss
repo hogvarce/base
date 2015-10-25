@@ -184,9 +184,17 @@ header {
             text-align: center;
             margin: 10px auto;
             font-size: $priceFontSize;
-            color: #ccc;
+            color: #000;
             strong{
                 color: $priceColor;
+            }
+        }
+        .discount {
+            @extend .price;
+            color: #000;
+            strong{
+                color: $colorGreen;
+                font-size: 130%;
             }
         }
         .buy {
