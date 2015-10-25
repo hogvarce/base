@@ -59,7 +59,7 @@ app.singleGoodView = Backbone.View.extend({
             'left'    : offsetBasket.left,
             'width'   : '0px',
             'height'  : '0px'
-        }, "fast", function(){
+        }, 600, function(){
             this.remove();
         });
 
