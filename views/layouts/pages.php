@@ -82,7 +82,7 @@ AppAsset::register($this);
     </footer>
 
     <script type="text/template" id="Good">
-        <div class="insideBlock" itemscope itemtype="http://schema.org/Product">
+        <div class="insideBlock<% if(discount){ %> discount<% } %>" itemscope itemtype="http://schema.org/Product">
             <p itemprop="name" class="good-name"><%= pagetitle %></p>
             <img itemprop="image" class="good-preview" src="/<%=image%>" title='<%=pagetitle%>' alt='<%=pagetitle%>'>
             <div class="description" itemprop="description"><%= content %></div>

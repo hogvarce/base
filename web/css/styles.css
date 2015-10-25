@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box; }
 
@@ -115,6 +116,17 @@ header {
     box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     position: relative;
     background-color: #fff; }
+    .good .insideBlock.discount:after {
+      content: "скидка";
+      font-size: 0px;
+      width: 82px;
+      height: 76px;
+      display: block;
+      position: absolute;
+      z-index: 20;
+      right: -33px;
+      top: -8px;
+      background: url("/img/discount.png") no-repeat center center; }
     .good .insideBlock:hover {
       -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);

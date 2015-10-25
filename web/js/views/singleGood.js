@@ -12,7 +12,8 @@ app.singleGoodView = Backbone.View.extend({
     events:{
         'click img.good-preview': 'openFrame',
         'click .buy': 'Buy',
-        'click .quantity-controls': 'changeCount'
+        'click .quantity-controls': 'changeCount',
+        'change .counter': 'changeQuantity'
     },
     changeCount: function(e){
         e.stopPropagation();
@@ -27,7 +28,11 @@ app.singleGoodView = Backbone.View.extend({
                     $counter.val( parseInt( $counter.val() ) - parseInt( $counter.attr("step") ) );
                 break;
         }
-        this.model.set('count', $counter.val());
+        this.model.set('count', Math.abs( parseInt( $counter.val() ) ) );
+    },
+    changeQuantity: function(){
+        var $counter =  this.$('.counter');
+        this.model.set('count',  Math.abs( parseInt( $counter.val() ) ) );
     },
     openFrame: function(){
         var frameContent = this.$('.description').html();

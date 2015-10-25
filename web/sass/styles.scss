@@ -149,6 +149,20 @@ header {
        margin-bottom: 25px;
        padding: 0 !important;
       .insideBlock {
+        &.discount{
+            &:after{
+                content: "скидка";
+                font-size: 0px;
+                width: 82px;
+                height: 76px;
+                display: block;
+                position: absolute;
+                z-index: 20;
+                right: -33px;
+                top: -8px;
+                background: url('/img/discount.png') no-repeat center center;
+            }
+        }
         //width: $widthGood;
         // height: $heightGood;
         // overflow: hidden;
