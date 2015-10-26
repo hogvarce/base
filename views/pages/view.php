@@ -16,6 +16,12 @@ use yii\helpers\Url;
 
         <?= $this->render('_slider'); ?>
 
+        <h3>Новинки</h3>
+
+        <div class="newGoods">
+            
+        </div>
+
 <?php endif; ?>
 
 

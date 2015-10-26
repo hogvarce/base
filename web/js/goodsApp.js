@@ -1,6 +1,14 @@
-if ($('.goods').length) {
+if ( $('.goods').length ) {
 
     var goodsRoute = new app.goodsRoute();
+    goodsRoute.render();
+
+}
+
+if ( $('.newGoods').length ) {
+
+    var goodsRoute = new app.goodsRoute();
+    goodsRoute.newRender();
 
 }
 

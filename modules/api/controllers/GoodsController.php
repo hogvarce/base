@@ -16,7 +16,7 @@ class GoodsController extends ActiveController
 
         return $actions;
     }
-    public function actionIndex($filter = null, $sort = 'id', $sortMethod = SORT_ASC)
+    public function actionIndex($filter = null, $sort = 'id', $sortMethod = SORT_ASC, $pageSize = 20)
     {
         $query = Goods::find();
         if ( $filter ) {
@@ -25,7 +25,7 @@ class GoodsController extends ActiveController
         }
         return new ActiveDataProvider([
             'pagination' => [
-                'pageSize' => 20,
+                'pageSize' => $pageSize,
             ],
             'query' => $query,
             'sort' => ['defaultOrder' => [$sort => $sortMethod]],

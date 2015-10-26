@@ -7,7 +7,7 @@ app.allGoodsViews = Backbone.View.extend({
     render: function(){
         this.collection.each(this.addGood, this);
         setTimeout(function(){
-            $('.goods .row').masonry({
+            $('.goods .row, .newGoods .row').masonry({
                 itemSelector : '.good',
                 columnWidth: 230,
                 gutterWidth: 25,

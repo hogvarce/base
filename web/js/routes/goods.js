@@ -1,11 +1,7 @@
 var app = app || {};
 
 app.goodsRoute = Backbone.Router.extend({
-
     routes: {},
-    initialize: function(){
-        this.render();
-    },
     render: function(){
         var pagin    = parseInt($.url().param('pagin'), 10) || 1,
             category = parseInt($.url().param('category'), 10) || 0;
@@ -29,12 +25,21 @@ app.goodsRoute = Backbone.Router.extend({
                     pagination += '<a '+active+'href="?pagin='+i+'&category='+category+'"><span>'+i+'</span></a>';
                 }
                 pagination += '</div>';
-                $(".goods").append(goodsGroupView.render().el)
+                $('.goods').append(goodsGroupView.render().el)
                     .before(pagination)
                         .after(pagination);
             }else{
-                $(".goods").append(goodsGroupView.render().el);
+                $('.goods').append(goodsGroupView.render().el);
             }
+        }});
+    },
+    newRender: function(){
+        var goodsGroup = new app.GoodsCollections();
+        var filterByCategoty = "new=1";
+        goodsGroup.url ='/api/goods?filter="' + filterByCategoty + '"&pageSize=30';
+        goodsGroup.fetch({success:function(collection, response, options){
+            var goodsGroupView = new app.allGoodsViews({ collection: collection });
+            $('.newGoods').append(goodsGroupView.render().el);
         }});
     }
 });
