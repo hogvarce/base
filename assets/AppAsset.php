@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
         '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
         '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css',
         'css/camera.css',
+        'css/owl.carousel.css',
         'css/site.css',
         'css/styles.css',
         'css/animate.css',
@@ -30,13 +31,14 @@ class AppAsset extends AssetBundle
         '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js',
         '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js',
         'js/product/jquery.easing.1.3.js',
-        'js/product/bootstrap.min.js',
+    //    'js/product/bootstrap.min.js',
         'js/product/masonry.js',
         'js/product/cookie.js',
         'js/product/wow.min.js',
         'js/product/camera.min.js',
         'js/product/purl.js',
         'js/product/tm-stick-up.js',
+        'js/product/owl.carousel.min.js',
         'js/product/global.js',
     ];
     public $depends = [

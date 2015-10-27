@@ -164,7 +164,7 @@ header {
       text-align: center;
       bottom: 10px;
       left: 10px;
-      opacity: 0; }
+      z-index: 101; }
     .good .insideBlock .counter {
       position: absolute;
       right: 40px;
@@ -216,9 +216,6 @@ header {
 
 .top-block {
   margin: 20px auto; }
-
-.good.masonry-brick .insideBlock .buy {
-  opacity: 1; }
 
 a.addtocart-button {
   background: #adc846;
@@ -429,6 +426,55 @@ a.addtocart-button {
     z-index: 1111;
     float: right;
     width: 35%; }
+
+.newGoods .row .owl-stage-outer {
+  padding-top: 20px; }
+
+.newGoods .row .good .insideBlock {
+  width: 240px;
+  height: 390px;
+  z-index: 1000; }
+
+.owl-controls {
+  width: 100%;
+  position: absolute;
+  top: -30px; }
+  .owl-controls .owl-prev, .owl-controls .owl-next {
+    width: 38px;
+    height: 38px;
+    background: #fff;
+    position: absolute;
+    right: auto;
+    right: 56px;
+    top: 0;
+    margin-top: 0px;
+    opacity: 1 !important;
+    z-index: 111;
+    border: 1px solid #ededed;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    font-size: 0px; }
+    .owl-controls .owl-prev:hover:before, .owl-controls .navigation .owl-prev.container:hover:after, .navigation .owl-controls .owl-prev.container:hover:after, .navigation .owl-controls .container.owl-next:hover:after, .owl-controls .navigation .container.owl-next:hover:after, .owl-controls .owl-next:hover:before {
+      color: #fdae1b; }
+    .owl-controls .owl-prev:before, .owl-controls .navigation .owl-prev.container:after, .navigation .owl-controls .owl-prev.container:after, .navigation .owl-controls .container.owl-next:after, .owl-controls .navigation .container.owl-next:after, .owl-controls .owl-next:before {
+      color: #babcbf;
+      font-style: normal;
+      content: "\f053";
+      font-size: 15px;
+      line-height: 38px;
+      font-family: FontAwesome;
+      position: absolute;
+      right: 50%;
+      top: 0px;
+      margin-right: -4px;
+      text-align: center;
+      -webkit-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in; }
+  .owl-controls .owl-next {
+    right: 15px;
+    left: auto; }
+    .owl-controls .owl-next:before, .owl-controls .navigation .owl-next.container:after, .navigation .owl-controls .owl-next.container:after {
+      content: "\f054"; }
 
 @media only screen and (max-width: 768px) {
   .navigation .container:after,

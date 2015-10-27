@@ -57,6 +57,7 @@ app.singleGoodView = Backbone.View.extend({
         var offsetBasket = $('.cart_num').offset();
         imgAnimate.css({
             'position': 'absolute',
+            'z-index' :  '1001',
             'top'     : offsetImg.top,
             'left'    : offsetImg.left
         }).animate({

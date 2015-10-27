@@ -6,15 +6,6 @@ app.allGoodsViews = Backbone.View.extend({
     //index: 0,
     render: function(){
         this.collection.each(this.addGood, this);
-        setTimeout(function(){
-            $('.goods .row, .newGoods .row').masonry({
-                itemSelector : '.good',
-                columnWidth: 230,
-                gutterWidth: 25,
-                isAnimated: true,
-                isResizable: true
-              });
-        },500);
         return this;
     },
     addGood: function(good){

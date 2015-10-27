@@ -18,8 +18,8 @@ use yii\helpers\Url;
 
         <h3>Новинки</h3>
 
-        <div class="newGoods">
-            
+        <div class="newGoods carousel slide" data-ride="carousel">
+
         </div>
 
 <?php endif; ?>
@@ -27,7 +27,7 @@ use yii\helpers\Url;
 
 <div class="pages-view">
 
-    <h1><?= Html::encode($model->title) ?></h1>
+    <h1 class="wow animate bounceInLeft"><?= Html::encode($model->title) ?></h1>
     <p><?= $model->content_page ?></p>
 
     <?php if ( $model->goods_on_page ): ?>

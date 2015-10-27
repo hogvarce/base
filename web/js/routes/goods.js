@@ -31,15 +31,25 @@ app.goodsRoute = Backbone.Router.extend({
             }else{
                 $('.goods').append(goodsGroupView.render().el);
             }
+            $('.goods .row, .newGoods .row').masonry({
+                itemSelector : '.good',
+                columnWidth: 230,
+                gutterWidth: 25,
+                isAnimated: true,
+                isResizable: true
+              });
         }});
     },
     newRender: function(){
         var goodsGroup = new app.GoodsCollections();
-        var filterByCategoty = "new=1";
-        goodsGroup.url ='/api/goods?filter="' + filterByCategoty + '"&pageSize=30';
+        goodsGroup.url ='/api/goods?filter="new=1"&pageSize=30';
         goodsGroup.fetch({success:function(collection, response, options){
             var goodsGroupView = new app.allGoodsViews({ collection: collection });
             $('.newGoods').append(goodsGroupView.render().el);
+            $('.newGoods .row').owlCarousel({
+                items: 4,
+                nav: true
+            });
         }});
     }
 });
