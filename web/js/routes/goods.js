@@ -48,7 +48,9 @@ app.goodsRoute = Backbone.Router.extend({
             $('.newGoods').append(goodsGroupView.render().el);
             $('.newGoods .row').owlCarousel({
                 items: 4,
-                nav: true
+                nav: true,
+                mouseDrag: true,
+                touchDrag: true
             });
         }});
     }

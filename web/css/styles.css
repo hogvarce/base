@@ -11,7 +11,8 @@ header {
 .wrap {
   overflow: hidden; }
   .wrap > .container.box-layout {
-    padding: 20px 15px; }
+    padding: 20px 15px;
+    margin-bottom: 95px; }
   .wrap .content {
     min-height: 500px; }
 
@@ -163,8 +164,7 @@ header {
       position: absolute;
       text-align: center;
       bottom: 10px;
-      left: 10px;
-      z-index: 101; }
+      left: 10px; }
     .good .insideBlock .counter {
       position: absolute;
       right: 40px;
@@ -399,7 +399,8 @@ a.addtocart-button {
   height: 350px; }
 
 .camera_wrap {
-  margin: 30px 0px; }
+  margin: 30px 0px;
+  min-height: 185px; }
   .camera_wrap .camera_pag .camera_pag_ul {
     width: 30%; }
   .camera_wrap .camera_caption {
@@ -425,13 +426,13 @@ a.addtocart-button {
     float: right;
     width: 35%; }
 
-.newGoods .row .owl-stage-outer {
-  padding-top: 20px; }
-
-.newGoods .row .good .insideBlock {
-  width: 240px;
-  height: 390px;
-  z-index: 1000; }
+.newGoods {
+  height: 435px; }
+  .newGoods .row .owl-stage-outer {
+    padding-top: 20px; }
+  .newGoods .row .good .insideBlock {
+    width: 240px;
+    height: 390px; }
 
 .owl-controls {
   width: 100%;
