@@ -223,8 +223,6 @@ a.addtocart-button {
   height: auto;
   color: #fff;
   text-align: center;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
   padding: 6px 30px;
   border-radius: 0;
   position: relative;
