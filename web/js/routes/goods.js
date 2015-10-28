@@ -22,7 +22,7 @@ app.goodsRoute = Backbone.Router.extend({
                 for(var i = 1; i <= paginCount; i++)
                 {
                     active = (currentPage == i) ? 'class="pagin active"' : 'class="pagin"';
-                    pagination += '<a '+active+'href="?pagin='+i+'&category='+category+'"><span>'+i+'</span></a>';
+                    pagination += '<a '+active+'href="/goods?pagin='+i+'&category='+category+'"><span>'+i+'</span></a>';
                 }
                 pagination += '</div>';
                 $('.goods').append(goodsGroupView.render().el)
@@ -39,6 +39,17 @@ app.goodsRoute = Backbone.Router.extend({
                 isResizable: true
               });
         }});
+        var categoryGroup = new app.CategoryCollections();
+        categoryGroup.url = "/api/category";
+        categoryGroup.fetch({
+            success: function(collection){
+                var categoryViews = new app.categoryViews({ collection: collection });
+                $('.category').append( categoryViews.render().el )
+                                .children('ul')
+                                    .prepend( '<li class="all"><a href="/goods">Все товары</a></li>' );
+            }
+        });
+
     },
     newRender: function(){
         var goodsGroup = new app.GoodsCollections();

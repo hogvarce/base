@@ -28,12 +28,13 @@ use yii\helpers\Url;
 <div class="pages-view">
 
     <h1 class="wow animate bounceInLeft"><?= Html::encode($model->title) ?></h1>
-    <p><?= $model->content_page ?></p>
+    <div class="wow animate fadeInUp"><?= $model->content_page ?></div>
 
     <?php if ( $model->goods_on_page ): ?>
     <div class="blockGoods">
         <div class="col-xs-12 col-sm-4">
-            <?php
+            <div class="category"></div>
+            <!-- <?php
                 $categoryGoods = \app\models\GoodsCategory::find()->all();
                 $activeCategory = Yii::$app->getRequest()->getQueryParam('category');
                 echo '<ul class="side-menu list-unstyled">';
@@ -44,7 +45,7 @@ use yii\helpers\Url;
                     echo '<li'. $active .'><a href="javascript:addParamUrl(\'category\', '.$category->id.');">'.$category->title_category.'</a></li>';
                 }
                 echo '</ul>';
-            ?>
+            ?> -->
         </div>
         <div class="col-xs-12 col-sm-8">
             <div class="goods"></div>

@@ -21,7 +21,10 @@ class GoodsController extends ActiveController
         $query = Goods::find();
         if ( $filter ) {
             $filter = json_decode($filter, true);
-            $query  = $query->andWhere($filter);
+            $query  = $query->andWhere($filter)
+                            ->andWhere(['published' => 1]);
+        } else {
+            $query  = $query->andWhere(['published' => 1]);
         }
         return new ActiveDataProvider([
             'pagination' => [
