@@ -1,7 +1,14 @@
 if ( $('.goods').length ) {
 
     var goodsRoute = new app.goodsRoute();
-    goodsRoute.render();
+    goodsRoute.init();
+
+    $(document).on('click', '.pagin', function(e){
+        e.preventDefault();
+        var url = $(this).attr('href');
+        Backbone.history.navigate(url, {trigger: true, replace: true});
+        goodsRoute.init();
+    });
 
 }
 

@@ -1,8 +1,7 @@
 var app = app || {};
 
 app.goodsRoute = Backbone.Router.extend({
-    routes: {},
-    render: function(){
+    init: function(){
         var pagin    = parseInt($.url().param('pagin'), 10) || 1,
             category = parseInt($.url().param('category'), 10) || 0;
         var goodsGroup = new app.GoodsCollections();
@@ -25,11 +24,11 @@ app.goodsRoute = Backbone.Router.extend({
                     pagination += '<a '+active+'href="/goods?pagin='+i+'&category='+category+'"><span>'+i+'</span></a>';
                 }
                 pagination += '</div>';
-                $('.goods').append(goodsGroupView.render().el)
-                    .before(pagination)
-                        .after(pagination);
+                $('.goods').html(goodsGroupView.render().el)
+                    .append(pagination)
+                        .prepend(pagination);
             }else{
-                $('.goods').append(goodsGroupView.render().el);
+                $('.goods').html(goodsGroupView.render().el);
             }
             $('.goods .row, .newGoods .row').masonry({
                 itemSelector : '.good',
@@ -39,17 +38,18 @@ app.goodsRoute = Backbone.Router.extend({
                 isResizable: true
               });
         }});
-        var categoryGroup = new app.CategoryCollections();
-        categoryGroup.url = "/api/category";
-        categoryGroup.fetch({
-            success: function(collection){
-                var categoryViews = new app.categoryViews({ collection: collection });
-                $('.category').append( categoryViews.render().el )
-                                .children('ul')
-                                    .prepend( '<li class="all"><a href="/goods">Все товары</a></li>' );
-            }
-        });
-
+        if($('.category').html() == ""){
+            var categoryGroup = new app.CategoryCollections();
+            categoryGroup.url = "/api/category";
+            categoryGroup.fetch({
+                success: function(collection){
+                    var categoryViews = new app.categoryViews({ collection: collection });
+                    $('.category').html( categoryViews.render().el )
+                                    .children('ul')
+                                        .prepend( '<li class="all"><a href="/goods">Все товары</a></li>' );
+                }
+            });
+        }
     },
     newRender: function(){
         var goodsGroup = new app.GoodsCollections();
