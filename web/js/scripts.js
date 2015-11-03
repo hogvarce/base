@@ -87,12 +87,11 @@ function initMap() {
       });
       marker.addListener('click', function(){
           map.setCenter(marker.getPosition());
-          infowindow.open(map);
+          infowindow.open(map, marker);
       });
 
       infowindow = new google.maps.InfoWindow({
-        content: 'Наш адрес',
-        position: marker.getPosition()
+        content: 'Наш адрес'
       });
 }
 
