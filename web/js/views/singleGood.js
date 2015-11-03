@@ -48,8 +48,23 @@ app.singleGoodView = Backbone.View.extend({
     },
     Buy: function(e){
         e.preventDefault();
-        var basket = JSON.parse(localStorage.getItem('basket') || '[]');
-        basket.push(this.model);
+
+        var basket = JSON.parse( localStorage.getItem('basket') || '[]' ),
+                id = this.model.get("id"),
+           newItem = true;
+
+
+         if ( basket.length > 0 )
+            for ( item in basket ) {
+                    if ( basket[item].id === id ) {
+                         basket[item].count +=  this.model.get("count");
+                         newItem = false;
+                         break;
+                     }
+            }
+        if ( newItem || basket.length === 0)
+            basket.push( this.model );
+
         app.BasketModel.set('goodsCount', basket.length);
         localStorage.setItem('basket', JSON.stringify(basket));
         var imgAnimate   = this.$('.good-preview').clone().appendTo('body');
