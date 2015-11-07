@@ -30,8 +30,9 @@ class Customers extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['customer_name', 'customer_phone', 'customer_email'], 'required', 'message'=>'Заполните, пожалуйста, это поле'],
+            [['customer_name', 'customer_phone', 'customer_email', 'payment_type'], 'required', 'message'=>'Заполните, пожалуйста, это поле'],
             [['comments'], 'string'],
+            [['payment_type'], 'boolean'],
             [['customer_name', 'customer_phone', 'customer_email', 'order_address'], 'string', 'max' => 255]
         ];
     }
@@ -48,6 +49,7 @@ class Customers extends \yii\db\ActiveRecord
             'customer_email' => 'Email',
             'order_address' => 'Адрес доставки',
             'comments' => 'Комментарии к заказу',
+            'payment_type' => 'Тип оплаты'
         ];
     }
 }
