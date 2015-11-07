@@ -34,18 +34,6 @@ use yii\helpers\Url;
     <div class="blockGoods">
         <div class="col-xs-12 col-sm-4">
             <div class="category"></div>
-            <!-- <?php
-                $categoryGoods = \app\models\GoodsCategory::find()->all();
-                $activeCategory = Yii::$app->getRequest()->getQueryParam('category');
-                echo '<ul class="side-menu list-unstyled">';
-                echo '<li class="all"><a href="javascript:addParamUrl(\'category\', 0);">Все товары</a></li>';
-                foreach ($categoryGoods as $category) {
-                    if( $activeCategory == $category->id ) $active = " class='active'";
-                    else  $active = '';
-                    echo '<li'. $active .'><a href="javascript:addParamUrl(\'category\', '.$category->id.');">'.$category->title_category.'</a></li>';
-                }
-                echo '</ul>';
-            ?> -->
         </div>
         <div class="col-xs-12 col-sm-8">
             <div class="goods"></div>

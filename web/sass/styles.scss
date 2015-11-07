@@ -341,12 +341,19 @@ a.addtocart-button {
         display: block;
         float: left;
         margin-left: 5px;
+        text-decoration: none;
         span {
             display: block;
             @include border-radius(2px);
             padding: 5px;
         }
     }
+}
+
+.discountMessage {
+    padding-top: 20px;
+    font-size:  16px;
+    color: $colorBlue;
 }
 
 .side-menu {

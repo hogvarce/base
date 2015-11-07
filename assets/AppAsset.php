@@ -33,7 +33,7 @@ class AppAsset extends AssetBundle
         'js/product/jquery.easing.1.3.js',
     //    'js/product/bootstrap.min.js',
         'js/product/masonry.js',
-        'js/product/cookie.js',
+    //    'js/product/cookie.js',
         'js/product/wow.min.js',
         'js/product/camera.min.js',
         'js/product/purl.js',

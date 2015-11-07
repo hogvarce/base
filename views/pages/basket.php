@@ -18,6 +18,8 @@
                 <%
                     goodSum = Math.round((item.count * item.price)*100)/100;
                     sum += Math.round((goodSum)*100)/100;
+                    sumDiscount = ( <?= Yii::$app->params['sumDiscount'] ?> > sum ) ? 300 : 0;
+                    sum += sumDiscount;
                 %>
                     <tr>
                         <th scope="row"><%= ++e %></th>
@@ -34,7 +36,8 @@
                         <td><%= goodSum %> <span class="delete">удалить</span></td>
                     </tr>
                 <% }); %>
-                <tr><th colspan="5">Итого: </th><th><%= sum %><br><%=  declOfNum(Math.round(sum), ["рубль", "рубля", "рублей"]) %></th></tr>
+                <tr><th colspan="5">Доставка: </th><th id="sumDiscount"><%= sumDiscount %></th></tr>
+                <tr><th colspan="5">Итого: </th><th id="sumBasket"><%= sum %><br><span><%=  declOfNum(Math.round(sum), ["рубль", "рубля", "рублей"]) %></span></th></tr>
                 </tbody>
             </table>
             <div class="makeBuy">
