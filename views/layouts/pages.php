@@ -29,10 +29,10 @@ AppAsset::register($this);
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-6 discountMessage">
+                    <div class="col-xs-12 col-sm-12 col-md-6 discountMessage">
                         <p>При заказе свыше <?= Yii::$app->params['sumDiscount'] ?> рублей - доставка <span class="text-uppercase">бесплатно!</span></p>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
 
                     </div>
                 </div>

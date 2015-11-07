@@ -55,7 +55,8 @@ AppAsset::register($this);
                     'options' => ['class' => 'navbar navbar-vertical'],
                     'items' => [
                         ['label' => 'Страницы', 'url' => ['/admin/pages/index']],
-                        ['label' => 'Товары', 'url' => ['/admin/goods/index']]
+                        ['label' => 'Товары', 'url' => ['/admin/goods/index']],
+                        ['label' => 'Доставка', 'url' => ['/admin/delivery/index']]
                     ],
                     ]);
                 ?>

@@ -35,7 +35,7 @@
                     </tr>
                 <% }); %>
                 <%
-                    sumDiscount = ( <?= Yii::$app->params['sumDiscount'] ?> > sum ) ? 300 : 0;
+                    sumDiscount = ( <?= $delivery[0]->sum_delivery ?> > sum ) ? <?= $delivery[0]->cost_delivery ?> : 0;
                     sum += sumDiscount;
                  %>
                 <tr><th colspan="5">Доставка: </th><th id="sumDiscount"><%= (sumDiscount > 0) ? sumDiscount : "бесплатно" %></th></tr>

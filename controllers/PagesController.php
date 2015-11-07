@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Customers;
+use app\models\Delivery;
 
 class PagesController extends Controller
 {
@@ -56,7 +57,8 @@ class PagesController extends Controller
     {
       $model = Pages::findOne([
         'slug' => $slug,
-    ]);
+     ]);
+
       if ($model === null) {
           throw new NotFoundHttpException;
       }
@@ -106,8 +108,10 @@ class PagesController extends Controller
 
     public function actionBasket()
     {
+        $delivery = Delivery::find()->all();
         return $this->render('basket',[
             'model' => $model,
+            'delivery' => $delivery
             ]);
     }
 

@@ -10,6 +10,13 @@ if ( $('.goods').length ) {
         goodsRoute.init();
     });
 
+    $(document).on('click', '.category li a', function(e){
+        e.preventDefault();
+        var url = $(this).attr('href');
+        Backbone.history.navigate(url, {trigger: true, replace: true});
+        goodsRoute.init();
+    });
+
 }
 
 if ( $('.newGoods').length ) {
