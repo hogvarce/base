@@ -31,7 +31,7 @@ class AppAsset extends AssetBundle
         '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js',
         '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js',
         'js/product/jquery.easing.1.3.js',
-    //    'js/product/bootstrap.min.js',
+        'js/product/bootstrap.min.js',
         'js/product/masonry.js',
     //    'js/product/cookie.js',
         'js/product/wow.min.js',

@@ -118,7 +118,7 @@ class PagesController extends Controller
     public function actionOrder()
     {
         $model = new Customers();
-        if ( $model->load(Yii::$app->request->post()) ){
+        if ( $model->load(Yii::$app->request->post()) && $model->validate() ){
             // $mail = Yii::$app->mail->compose()
             //  ->setFrom('fynjy410@yandex.ru')
             //  ->setTo('fynjy410@yandex.ru')
@@ -128,8 +128,10 @@ class PagesController extends Controller
             $model->save();
              return $this->redirect('success-order', 302);
         }
+        $delivery = Delivery::find()->all();
         return $this->render('order',[
             'model' => $model,
+            'delivery' => $delivery
             ]);
     }
 

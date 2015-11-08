@@ -26,7 +26,7 @@ if ( $('.newGoods').length ) {
 
 }
 
-if ($('.basket-view').length){
+if ( $('.basket-view').length || $('.order-view').length ){
 
     var basketRoute = new app.basketRouter();
 
