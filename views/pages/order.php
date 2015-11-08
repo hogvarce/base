@@ -29,6 +29,7 @@
 
     </div>
     <div class="col-xs-12 col-md-6">
+        <h3>Список заказа:</h3>
         <ol class="order-list">
         </ol>
     </div>
@@ -41,12 +42,12 @@
         goodSum = Math.round((item.count * item.price)*100)/100;
         sum += Math.round((goodSum)*100)/100;
     %>
-        <li><%= item.pagetitle %></li>
+        <li><%= item.pagetitle %> - <%= item.count %> шт.</li>
     <% }); %>
     <%
         sumDiscount = ( <?= $delivery[0]->sum_delivery ?> > sum ) ? <?= $delivery[0]->cost_delivery ?> : 0;
         sum += sumDiscount;
      %>
-    <li>Доставка: <%= (sumDiscount > 0) ? sumDiscount : "бесплатно" %></li>
-    <li>Итого: <%= sum %> <%=  declOfNum(Math.round(sum), ["рубль", "рубля", "рублей"]) %></li>
+    <p><strong>Доставка: <%= (sumDiscount > 0) ? sumDiscount  : "бесплатно" %> <%= (sumDiscount > 0) ? declOfNum(Math.round(sumDiscount), ["рубль", "рубля", "рублей"]) : '' %></strong></p>
+    <h4>Итого: <%= sum %> <%=  declOfNum(Math.round(sum), ["рубль", "рубля", "рублей"]) %></h4>
 </script>

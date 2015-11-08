@@ -126,7 +126,7 @@ class PagesController extends Controller
             //  if (!$mail->send())
             //   echo "чет не получилось.";
             $model->save();
-             return $this->redirect('success-order', 302);
+            return $this->redirect('success-order', 302);
         }
         $delivery = Delivery::find()->all();
         return $this->render('order',[

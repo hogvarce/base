@@ -56,7 +56,6 @@ $(function(){
         click: function(e) {
             e.preventDefault();
             if( localStorage.getItem('basket').length ){
-                //localStorage.setItem('basket', '');
                 $('#order-form').submit();
             }
         }
