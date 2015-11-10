@@ -20,6 +20,7 @@
             <?= $form->field($model, 'customer_phone')->input('tel', ['required' => true]) ?>
             <?= $form->field($model, 'customer_email')->input('email', ['required' => true]) ?>
             <?= $form->field($model, 'order_address')->input([]) ?>
+            <div id="map" data-x="59.7459481" data-y="30.0861305"></div>
             <?= $form->field($model, 'comments')->textArea(['rows' => 6]) ?>
             <div class="form-submit">
                 <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary pull-right send-order']) ?>
@@ -42,7 +43,7 @@
         goodSum = Math.round((item.count * item.price)*100)/100;
         sum += Math.round((goodSum)*100)/100;
     %>
-        <li><%= item.pagetitle %> - <%= item.count %> шт.</li>
+        <li><%= item.pagetitle %> - <%= item.count %> шт. <em>(<%= item.articale %>)</em></li>
     <% }); %>
     <%
         sumDiscount = ( <?= $delivery[0]->sum_delivery ?> > sum ) ? <?= $delivery[0]->cost_delivery ?> : 0;

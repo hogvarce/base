@@ -31,7 +31,7 @@ class Customers extends \yii\db\ActiveRecord
     {
         return [
             [['customer_name', 'customer_phone', 'customer_email', 'payment_type'], 'required', 'message'=>'Заполните, пожалуйста, это поле'],
-            [['comments'], 'string'],
+            [['comments', 'order_list'], 'string'],
             [['payment_type'], 'boolean'],
             [['customer_name', 'customer_phone', 'customer_email', 'order_address'], 'string', 'max' => 255]
         ];
@@ -49,7 +49,8 @@ class Customers extends \yii\db\ActiveRecord
             'customer_email' => 'Email',
             'order_address' => 'Адрес доставки',
             'comments' => 'Комментарии к заказу',
-            'payment_type' => 'Тип оплаты'
+            'payment_type' => 'Тип оплаты',
+            'order_list' => 'Список покупок',
         ];
     }
 }
