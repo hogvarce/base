@@ -1,7 +1,14 @@
+requirejs.config({
+    baseUrl: 'js/product'
+});
+
 $(function(){
     // wow animation activation
-    new WOW().init();
-
+    if ( $('.wow').length ) {
+        requirejs(['wow.min'], function(){
+            new WOW().init();
+        });
+    }
     //active button in menu
     $('.navigation .nav a').each(function(e){
         var href = $(this).attr('href');
@@ -10,7 +17,9 @@ $(function(){
     });
 
     //stick navigation on top when scroll
-    $('.navigation').tmStickUp();
+    requirejs(['tm-stick-up'], function(tmStickUp){
+        $('.navigation').tmStickUp();
+    });
 
     //load google maps
     if($('#map').length){
@@ -23,32 +32,34 @@ $(function(){
     }
 
     if( $('.camera_wrap').length ){
-        $('.camera_wrap').camera({ //here I declared some settings, the height and the presence of the thumbnails
-                height: '40%',
-                minHeight: '',
-                pauseOnClick: false,
-                hover: 1,
-                fx: 'simpleFade',
-                loader: 'none',
-                pagination: 1,
-                thumbnails: 0,
-                thumbheight: 75,
-                thumbwidth: 100,
-                time: 10000,
-                transPeriod: 1000,
-                alignment: 'center',
-                autoAdvance: 1,
-                mobileAutoAdvance: 1,
-                portrait: 0,
-                barDirection: 'leftToRight',
-                imagePath: '/img/',
-                lightbox: 'mediaboxck',
-                fullpage: 0,
-				mobileimageresolution: '0',
-                navigationHover: false,
-                navigation: false,
-                playPause: false,
-                barPosition: 'bottom'
+        requirejs(['camera.min'], function(camera){
+            $('.camera_wrap').camera({ //here I declared some settings, the height and the presence of the thumbnails
+                    height: '40%',
+                    minHeight: '',
+                    pauseOnClick: false,
+                    hover: 1,
+                    fx: 'simpleFade',
+                    loader: 'none',
+                    pagination: 1,
+                    thumbnails: 0,
+                    thumbheight: 75,
+                    thumbwidth: 100,
+                    time: 10000,
+                    transPeriod: 1000,
+                    alignment: 'center',
+                    autoAdvance: 1,
+                    mobileAutoAdvance: 1,
+                    portrait: 0,
+                    barDirection: 'leftToRight',
+                    imagePath: '/img/',
+                    lightbox: 'mediaboxck',
+                    fullpage: 0,
+    				mobileimageresolution: '0',
+                    navigationHover: false,
+                    navigation: false,
+                    playPause: false,
+                    barPosition: 'bottom'
+            });
         });
     }
 

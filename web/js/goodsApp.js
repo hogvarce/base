@@ -1,3 +1,7 @@
+requirejs.config({
+    baseUrl: 'js/product'
+});
+
 if ( $('.goods').length ) {
 
     var goodsRoute = new app.goodsRoute();
