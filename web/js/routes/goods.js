@@ -10,7 +10,7 @@ app.goodsRoute = Backbone.Router.extend({
 
             var goodsGroup = new app.GoodsCollections();
             if ( category != 0 ) {
-                var filterByCategoty = "parent IN (SELECT id FROM goods_category WHERE id='" + category + "')";
+                var filterByCategoty = "parent IN (SELECT id FROM dom_goods_category WHERE id='" + category + "')";
                 goodsGroup.url ='/api/goods?filter="' + filterByCategoty + '"&page=' + pagin;
             } else {
                 goodsGroup.url ="/api/goods?page=" + pagin;

@@ -17,7 +17,7 @@ class GoodsCategory extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'goods_category';
+        return 'dom_goods_category';
     }
 
     /**

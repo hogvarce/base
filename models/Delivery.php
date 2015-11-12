@@ -17,7 +17,7 @@ class Delivery extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'delivery';
+        return 'dom_delivery';
     }
 
     /**

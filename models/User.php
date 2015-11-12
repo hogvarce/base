@@ -12,7 +12,7 @@ class User extends \yii\db\ActiveRecord  implements IdentityInterface
 {
       public static function tableName()
      {
-         return 'users';
+         return 'dom_users';
      }
 
     /**
