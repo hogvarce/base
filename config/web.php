@@ -45,6 +45,7 @@ $config = [
           'rules' =>  require(__DIR__ . '/rules.php'),
         ],
         'request' => [
+            'baseUrl' => '',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '1JDvFyvW2Iww5fUA0W9DdeamWE48eqD3',
             'parsers' => [
