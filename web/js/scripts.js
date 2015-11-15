@@ -128,11 +128,24 @@ function initMap() {
           var self = $(this);
           getGeo(self.val());
       });
+
+     map.addListener('click', function(event) {
+        loc = event.latLng;
+        getLoc(loc);
+    });
 }
 
 function getGeo(query){
     $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address='+query, function(response){
         marker.setPosition(response.results[0].geometry.location);
+        map.setCenter(marker.getPosition());
+    });
+}
+
+function getLoc(loc){
+    $.getJSON('//maps.googleapis.com/maps/api/geocode/json?latlng='+loc.lat()+','+loc.lng()+'&sensor=true', function(response){
+        $('#customers-order_address').val(response.results[0].formatted_address);
+        marker.setPosition(loc);
         map.setCenter(marker.getPosition());
     });
 }

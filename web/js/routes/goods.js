@@ -2,7 +2,7 @@ var app = app || {};
 
 app.goodsRoute = Backbone.Router.extend({
     init: function(){
-
+            var router = this;
             requirejs(['purl', 'masonry'], function(url, masonry){
 
                 var pagin    = parseInt($.url().param('pagin'), 10) || 1,
@@ -34,6 +34,12 @@ app.goodsRoute = Backbone.Router.extend({
                 }else{
                     $('.goods').html(goodsGroupView.render().el);
                 }
+
+                $('.pagin').click(function(){
+                    var self = $(this);
+                    router.navigate(self.attr('href'));
+                });
+
                 $('.goods .row, .newGoods .row').masonry({
                     itemSelector : '.good',
                     columnWidth: 230,
