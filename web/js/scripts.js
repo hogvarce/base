@@ -92,8 +92,9 @@ $(function(){
 
 }());
 
+var map, marker, infowindow;
+
 function initMap() {
-      var map, marker, infowindow;
       var locationLat = parseFloat(document.getElementById('map').getAttribute('data-x'));
       var locationLng = parseFloat(document.getElementById('map').getAttribute('data-y'));
 
@@ -104,7 +105,7 @@ function initMap() {
 
       marker = new google.maps.Marker({
           map: map,
-          draggable: true,
+          draggable: false,
           animation: google.maps.Animation.DROP,
           position: {lat: locationLat, lng: locationLng}
       });
@@ -122,11 +123,23 @@ function initMap() {
       infowindow = new google.maps.InfoWindow({
         content: 'Наш адрес'
       });
+
+      $('#customers-order_address').change(function(){
+          var self = $(this);
+          getGeo(self.val());
+      });
+}
+
+function getGeo(query){
+    $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address='+query, function(response){
+        marker.setPosition(response.results[0].geometry.location);
+        map.setCenter(marker.getPosition());
+    });
 }
 
 function addParamUrl(key, val){
     var url = window.location.href;
-  var reExp = new RegExp("[\?|\&]"+key + "=[0-9a-zA-Z\_\+\-\|\.\,\;]*");
+    var reExp = new RegExp("[\?|\&]"+key + "=[0-9a-zA-Z\_\+\-\|\.\,\;]*");
 
 if(reExp.test(url))
 { // update
