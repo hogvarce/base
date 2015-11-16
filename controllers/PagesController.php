@@ -91,7 +91,7 @@ class PagesController extends Controller
         return $this->goHome();
     }
 
-    public function actionPage($slug)
+/*   public function actionPage($slug)
     {
         $model = Pages::findOne([
           'slug' => $slug,
@@ -104,7 +104,7 @@ class PagesController extends Controller
         return $this->render('view', [
             'model' => $model,
         ]);
-    }
+    }*/
 
     public function actionBasket()
     {
