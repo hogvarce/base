@@ -119,12 +119,21 @@ class PagesController extends Controller
     {
         $model = new Customers();
         if ( $model->load(Yii::$app->request->post()) && $model->validate() ){
-            // $mail = Yii::$app->mail->compose()
-            //  ->setFrom('fynjy410@yandex.ru')
-            //  ->setTo('fynjy410@yandex.ru')
-            //  ->setSubject('Email sent from Yii2-Swiftmailer');
-            //  if (!$mail->send())
-            //   echo "чет не получилось.";
+
+            $customer = Yii::$app->request->post()["Customers"];
+            $textMail = "<p><strong>" . $customer['customer_name'] . "</strong> сделал заказ на сайте. </p> " .
+                "<p>Его телефон: <strong>" . $customer['customer_phone'] . "</strong></p>" .
+                "<p>Адрес доставки: <strong>" . $customer['order_address'] . "</strong></p>" .
+                "<p>Комментарии: <strong>" . $customer['comments'] . "</strong></p>" .
+                $customer['order_list'];
+
+            $mail = Yii::$app->mail->compose()
+                                     ->setFrom('fynjy410@yandex.ru')
+                                     ->setTo('fynjy410@yandex.ru')
+                                     ->setSubject('Заказ на plastic-dom')
+                                     ->setHtmlBody($textMail);
+             if (!$mail->send())
+              return $this->redirect('failed-order', 302);
             $model->save();
             return $this->redirect('success-order', 302);
         }
@@ -137,6 +146,10 @@ class PagesController extends Controller
 
     public function actionSuccess(){
         return $this->render('success-order');
+    }
+
+    public function actionFailed(){
+        return $this->render('failed-order');
     }
 
 }

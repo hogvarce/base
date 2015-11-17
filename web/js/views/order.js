@@ -39,6 +39,33 @@ app.order = Backbone.View.extend({
                 }
             });
 
+            $(document).on({
+                click: function(e) {
+
+                    e.preventDefault();
+
+                    if( localStorage.getItem('basket').length ){
+
+                        var customer = {
+                            name  : $('#customers-customer_name').val(),
+                            phone : $('#customers-customer_phone').val(),
+                            email : $('#customers-customer_email').val()
+                        };
+
+                        localStorage.setItem('customer', JSON.stringify(customer));
+
+                        var form = $('#order-form'),
+                            list = $('.order-list').parent().html();
+                        form.append('
+                            <textarea id="customers-order_list" class="form-control" name="Customers[order_list]" style="display:none;">'
+                                + list +
+                            '</textarea>');
+                        form.submit();
+                    }
+                }
+
+            }, '.send-order');  
+
         return this;
     }
 });
