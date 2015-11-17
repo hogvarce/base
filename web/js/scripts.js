@@ -124,15 +124,19 @@ function initMap() {
         content: 'Наш адрес'
       });
 
-      $('#customers-order_address').change(function(){
-          var self = $(this);
-          getGeo(self.val());
-      });
+      if ( $('#order-form').length ) {
 
-     map.addListener('click', function(event) {
-        loc = event.latLng;
-        getLoc(loc);
-    });
+          $('#customers-order_address').change(function(){
+              var self = $(this);
+              getGeo(self.val());
+          });
+
+         map.addListener('click', function(event) {
+            loc = event.latLng;
+            getLoc(loc);
+         });
+         
+      }
 }
 
 function getGeo(query){
